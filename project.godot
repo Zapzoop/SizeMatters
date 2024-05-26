@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Godot Jam Game 2024"
-run/main_scene="res://main_menu.tscn"
+run/main_scene="res://gui/mainmenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
+Global="*res://autoload/global.gd"
 
 [input]
 

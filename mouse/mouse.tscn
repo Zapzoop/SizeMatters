@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8wmmovvl4ihe"]
+
+[ext_resource type="Texture2D" uid="uid://7fex34n1lgm6" path="res://sprites/mouse_hammer_click.png" id="1_0dcxn"]
+[ext_resource type="Texture2D" uid="uid://d4fftyql3oc8u" path="res://sprites/mouse_hammer.png" id="2_c6hpv"]
+[ext_resource type="Script" path="res://mouse/mouse.gd" id="3_wqaqh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_head2"]
+animations = [{
+"frames": [{
+"duration": 30.0,
+"texture": ExtResource("1_0dcxn")
+}],
+"loop": true,
+"name": &"click",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c6hpv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mouse" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_head2")
+animation = &"click"
+frame_progress = 0.0211241
+offset = Vector2(5, 9)
+script = ExtResource("3_wqaqh")

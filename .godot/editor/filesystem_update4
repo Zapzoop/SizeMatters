@@ -1,0 +1,8 @@
+res://main_menu.tscn
+res://gui/mainmenu/main_menu.tscn
+res://gui/mainmenu/main_menu.gd
+res://mouse.tscn
+res://mouse.gd
+res://levels/level_1.tscn
+res://mouse/mouse.tscn
+res://player/player.tscn
