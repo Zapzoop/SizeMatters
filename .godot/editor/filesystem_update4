@@ -3,3 +3,5 @@ res://mouse/mouse.tscn
 res://player/player.tscn
 res://levels/level_1.tscn
 res://gui/mainmenu/main_menu.gd
+res://gui/level_selector/level_selector.tscn
+res://gui/level_selector/level_selector.gd
