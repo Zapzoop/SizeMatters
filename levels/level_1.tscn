@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drjsuntdb1f2p"]
+[gd_scene load_steps=7 format=3 uid="uid://drjsuntdb1f2p"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_fegh1"]
 [ext_resource type="Texture2D" uid="uid://cjqartjvu6m6p" path="res://sprites/monochrome_tilemap_transparent.png" id="2_pkldp"]
-[ext_resource type="PackedScene" uid="uid://cn1bxi51sflmh" path="res://player.tscn" id="3_4kf5p"]
+[ext_resource type="PackedScene" uid="uid://cn1bxi51sflmh" path="res://player/player.tscn" id="3_4kf5p"]
+[ext_resource type="PackedScene" uid="uid://c8wmmovvl4ihe" path="res://mouse/mouse.tscn" id="4_o4v5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofhmy"]
 resource_name = "Tilemap"
@@ -1372,6 +1373,9 @@ layer_0/tile_data = PackedInt32Array(196611, 983040, 5, 196612, 1048576, 5, 1966
 
 [node name="Player" parent="." instance=ExtResource("3_4kf5p")]
 position = Vector2(129, -1)
+
+[node name="Mouse" parent="." instance=ExtResource("4_o4v5j")]
+scale = Vector2(0.6, 0.6)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
