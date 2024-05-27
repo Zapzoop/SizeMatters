@@ -69,9 +69,10 @@ position = Vector2(9, 1)
 rotation = -2.35982
 texture = ExtResource("6_i0v4e")
 
-[node name="hammer" parent="Marker2D/Hand" instance=ExtResource("7_2s3sa")]
-position = Vector2(3.51757, 4.96253)
-rotation = 2.35982
-
 [node name="Marker2D" type="Marker2D" parent="Marker2D/Hand"]
 rotation = -0.784356
+
+[node name="hammer" parent="Marker2D/Hand/Marker2D" instance=ExtResource("7_2s3sa")]
+position = Vector2(-1.01549, 5.9974)
+rotation = -3.13901
+scale = Vector2(1, 1)
