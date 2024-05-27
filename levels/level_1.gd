@@ -5,6 +5,7 @@ extends Node2D
 func _ready():
 	$TileMap.canvas_layer = $CanvasLayer
 	$TileMap.mouse = $Mouse
+	$TileMap.player = $Player
 	print("level 1")
 	
 

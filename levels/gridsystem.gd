@@ -2,6 +2,7 @@ extends TileMap
 
 var canvas_layer
 var mouse
+var player
 
 var indicator = preload("res://gui/tile_selector/tile_selector.tscn")
 var build_menu = preload("res://gui/build_menu/build_menu.tscn")
@@ -39,6 +40,11 @@ func _input(event):
 
 
 func place_block(vect:Vector2i):
+	var player_pos  = local_to_map(player.global_position)
+	var player_up_pos = Vector2i(player_pos.x,player_pos.y-1)
+	if player_pos == tile_pos or player_up_pos == tile_pos:
+		release()
+		return
 	set_cell(0,tile_pos,0,vect,0)
 	release()
 
