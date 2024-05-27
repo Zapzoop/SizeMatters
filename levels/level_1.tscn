@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://drjsuntdb1f2p"]
+[gd_scene load_steps=8 format=3 uid="uid://drjsuntdb1f2p"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_fegh1"]
 [ext_resource type="Texture2D" uid="uid://cjqartjvu6m6p" path="res://sprites/monochrome_tilemap_transparent.png" id="2_pkldp"]
 [ext_resource type="PackedScene" uid="uid://cn1bxi51sflmh" path="res://player/player.tscn" id="3_4kf5p"]
 [ext_resource type="PackedScene" uid="uid://c8wmmovvl4ihe" path="res://mouse/mouse.tscn" id="4_o4v5j"]
+[ext_resource type="PackedScene" uid="uid://d2n4c0wie4dme" path="res://enemies/mole/mole.tscn" id="5_ijl16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofhmy"]
 resource_name = "Tilemap"
@@ -1383,3 +1384,12 @@ scale = Vector2(0.6, 0.6)
 offset_right = 182.0
 offset_bottom = 118.0
 text = "Level 1"
+
+[node name="mole" parent="." instance=ExtResource("5_ijl16")]
+position = Vector2(134, 32)
+
+[node name="right" type="Node2D" parent="mole"]
+position = Vector2(75, 5)
+
+[node name="left" type="Node2D" parent="mole"]
+position = Vector2(-85, 7)

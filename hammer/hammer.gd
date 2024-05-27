@@ -16,7 +16,7 @@ func _process(delta):
 		if current > 2:
 			current = 0
 		change_hammer(current)
-
+	
 func change_hammer(new):
 	
 	texture = load(textures[new])

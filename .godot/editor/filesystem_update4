@@ -2,3 +2,6 @@ res://hammer/hammer.tscn
 res://levels/level_1.tscn
 res://player/player.tscn
 res://hammer/hammer.gd
+res://enemy.gd
+res://enemies/enemy.tscn
+res://enemies/mole/mole.tscn
