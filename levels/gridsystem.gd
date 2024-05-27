@@ -37,16 +37,16 @@ func _process(delta):
 		tile_pos = local_to_map(get_global_mouse_position())
 		if is_inside_range(tile_pos):
 			reach = true
-			can_build_setter()
-			can_destroy_setter()
-			if can_build:
+			if player.current_hammer == 1:
 				if tile_pos != previous_tile_pos or previous_tile_pos == null:
 					if get_cell_tile_data(0,tile_pos) == null:
 						erase_cell(1,previous_tile_pos)
 						set_cell(1,tile_pos,2,Vector2i(0,0),1)
+						can_build_setter()
 					elif get_cell_tile_data(0,tile_pos) != null:
 						erase_cell(1,previous_tile_pos)
-			if can_destroy:
+						can_build = false
+			if player.current_hammer == 2:
 				if tile_pos != previous_tile_pos or previous_tile_pos == null:
 					if get_cell_tile_data(0,tile_pos) != null:
 						erase_cell(1,previous_tile_pos)
@@ -54,8 +54,11 @@ func _process(delta):
 						can_destroy_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
 					elif get_cell_tile_data(0,tile_pos) == null:
 						erase_cell(1,previous_tile_pos)
+						can_destroy = false
 		else:
 			reach = false
+			can_build= false
+			can_destroy =false
 			erase_cell(1,previous_tile_pos)
 		previous_tile_pos = tile_pos
 
@@ -70,6 +73,7 @@ func _input(event):
 			mouse.hide()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_destroy_current_block:
 			set_cell(0,tile_pos,2,Vector2i(0,0),-1)
+			can_destroy_current_block = false
 
 func place_block(vect:Vector2i):
 	var player_pos  = local_to_map(player.global_position)
