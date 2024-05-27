@@ -75,4 +75,3 @@ rotation = -0.784356
 [node name="hammer" parent="Marker2D/Hand/Marker2D" instance=ExtResource("7_2s3sa")]
 position = Vector2(-1.01549, 5.9974)
 rotation = -3.13901
-scale = Vector2(1, 1)
