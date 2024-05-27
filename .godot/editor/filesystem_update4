@@ -1,7 +1,11 @@
+res://gui/build_menu/build_menu.tscn
 res://gui/mainmenu/main_menu.tscn
-res://levels/gridsystem.gd
 res://mouse/mouse.tscn
 res://player/player.tscn
 res://levels/level_1.tscn
 res://gui/level_selector/level_selector.tscn
 res://gui/tile_selector/tile_selector.tscn
+res://gui/build_menu/build_menu.gd
+res://autoload/global.gd
+res://levels/gridsystem.gd
+res://levels/level_1.gd

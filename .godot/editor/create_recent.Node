@@ -1,7 +1,12 @@
+TextureRect
+AnimationPlayer
+VBoxContainer
+ScrollContainer
+Panel
+VScrollBar
 Node2D
 AnimatedSprite2D
 Button
 GridContainer
 Label
-VBoxContainer
 Control
