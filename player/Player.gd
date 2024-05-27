@@ -26,8 +26,12 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("run")
 		if direction == -1:
 			$AnimatedSprite2D.flip_h = true
+			$Marker2D/Hand/Marker2D/hammer.flip_v = true
+			$Marker2D/Hand/Marker2D/hammer.position = Vector2(0,-5)
 		else:
 			$AnimatedSprite2D.flip_h = false
+			$Marker2D/Hand/Marker2D/hammer.flip_v = false
+			$Marker2D/Hand/Marker2D/hammer.position = Vector2(-1,6)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("idle")
