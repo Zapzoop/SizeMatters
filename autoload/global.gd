@@ -3,6 +3,8 @@ extends Node
 var build_menu
 var current_tilemap
 
+var player
+
 var craftable_coords = {
 	"coin":Vector2i(1,0),
 	"exclamation_box":Vector2i(7,2),

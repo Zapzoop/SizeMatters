@@ -18,6 +18,6 @@ func _process(delta):
 		change_hammer(current)
 
 func change_hammer(new):
-	
 	texture = load(textures[new])
 	position = positions[new]
+	Global.player.correct_pos(new)

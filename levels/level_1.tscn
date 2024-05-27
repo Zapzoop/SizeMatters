@@ -1385,7 +1385,6 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("3_fdqtu")
 
 [node name="Player" parent="." instance=ExtResource("3_4kf5p")]
-position = Vector2(-144, -8)
 position = Vector2(128, 1)
 
 [node name="Mouse" parent="." instance=ExtResource("4_o4v5j")]
