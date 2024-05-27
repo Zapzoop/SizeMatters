@@ -13,9 +13,13 @@ var previous_tile_pos:Vector2i
 
 var locked_tile_pos:Vector2i
 var is_locked = false
+
 var can_build = false
+var can_destroy = false
+var can_destroy_current_block = false
 
 var range = Vector2i(3,3) #inclusive
+var reach = false
 
 func _ready():
 	Global.current_tilemap = self
@@ -32,15 +36,29 @@ func _process(delta):
 	if !is_locked:
 		tile_pos = local_to_map(get_global_mouse_position())
 		if is_inside_range(tile_pos):
-			can_build = true
-			if tile_pos != previous_tile_pos or previous_tile_pos == null:
-				erase_cell(1,previous_tile_pos)
-				set_cell(1,tile_pos,2,Vector2i(0,0),1)
+			reach = true
+			can_build_setter()
+			can_destroy_setter()
+			if can_build:
+				if tile_pos != previous_tile_pos or previous_tile_pos == null:
+					if get_cell_tile_data(0,tile_pos) == null:
+						erase_cell(1,previous_tile_pos)
+						set_cell(1,tile_pos,2,Vector2i(0,0),1)
+					elif get_cell_tile_data(0,tile_pos) != null:
+						erase_cell(1,previous_tile_pos)
+			if can_destroy:
+				if tile_pos != previous_tile_pos or previous_tile_pos == null:
+					if get_cell_tile_data(0,tile_pos) != null:
+						erase_cell(1,previous_tile_pos)
+						set_cell(1,tile_pos,2,Vector2i(0,0),1)
+						can_destroy_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
+					elif get_cell_tile_data(0,tile_pos) == null:
+						erase_cell(1,previous_tile_pos)
 		else:
-			can_build = false
+			reach = false
 			erase_cell(1,previous_tile_pos)
 		previous_tile_pos = tile_pos
-	
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_build:
@@ -50,8 +68,8 @@ func _input(event):
 			canvas_layer.add_child(ins)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			mouse.hide()
-			
-
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_destroy_current_block:
+			set_cell(0,tile_pos,2,Vector2i(0,0),-1)
 
 func place_block(vect:Vector2i):
 	var player_pos  = local_to_map(player.global_position)
@@ -66,3 +84,22 @@ func release():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	mouse.show()
 	is_locked = false
+
+func can_build_setter():
+	if reach == true and player.current_hammer == 1:
+		can_build = true
+	elif reach == true and player.current_hammer != 1:
+		can_build = false
+	else:
+		can_build = false
+		erase_cell(1,previous_tile_pos)
+
+
+func can_destroy_setter():
+	if reach == true and player.current_hammer == 2:
+		can_destroy = true
+	elif reach == true and player.current_hammer != 2:
+		can_destroy = false
+	else:
+		can_destroy = false
+		erase_cell(1,previous_tile_pos)
