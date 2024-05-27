@@ -13,10 +13,11 @@ var craftable_coords = {
 	"crate":Vector2i(11,2),
 	}
 
-func _input(event):
-	if event.is_action_pressed("return_to_main_menu"):
-		get_tree().change_scene_to_file("res://main_menu.tscn")
-
 func draw_me(string):
 	current_tilemap.place_block(craftable_coords[string])
 	build_menu.remove_me()
+	build_menu = null
+
+func cancel_build():
+	current_tilemap.release()
+	build_menu = null

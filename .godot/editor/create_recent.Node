@@ -1,3 +1,4 @@
+Button
 TextureRect
 AnimationPlayer
 VBoxContainer
@@ -6,7 +7,6 @@ Panel
 VScrollBar
 Node2D
 AnimatedSprite2D
-Button
 GridContainer
 Label
 Control

@@ -37,6 +37,7 @@ func _input(event):
 			canvas_layer.add_child(ins)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			mouse.hide()
+			
 
 
 func place_block(vect:Vector2i):
