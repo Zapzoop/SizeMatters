@@ -53,7 +53,6 @@ func _input(event):
 	if Input.is_action_pressed("escape"):
 		_on_cancel_pressed()
 
-
 func _on_cancel_pressed():
 	Global.cancel_build()
 	self.queue_free()

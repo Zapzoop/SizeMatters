@@ -13,24 +13,37 @@ var previous_tile_pos:Vector2i
 
 var locked_tile_pos:Vector2i
 var is_locked = false
+var can_build = false
+
+var range = Vector2i(3,3) #inclusive
 
 func _ready():
 	Global.current_tilemap = self
 	pass
 
+func is_inside_range(pos):
+	var player_pos = local_to_map(player.global_position)
+	if (pos.x <= player_pos.x + range.x and pos.x >= player_pos.x - range.x) and (pos.y <= player_pos.y + range.y and pos.y >= player_pos.y - range.y):
+		return true
+	else:
+		return false
+
 func _process(delta):
 	if !is_locked:
 		tile_pos = local_to_map(get_global_mouse_position())
-		
-		if tile_pos != previous_tile_pos or previous_tile_pos == null:
+		if is_inside_range(tile_pos):
+			can_build = true
+			if tile_pos != previous_tile_pos or previous_tile_pos == null:
+				erase_cell(1,previous_tile_pos)
+				set_cell(1,tile_pos,2,Vector2i(0,0),1)
+		else:
+			can_build = false
 			erase_cell(1,previous_tile_pos)
-			set_cell(1,tile_pos,2,Vector2i(0,0),1)
-		
 		previous_tile_pos = tile_pos
 	
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_build:
 			is_locked = true
 			locked_tile_pos = tile_pos
 			var ins = build_menu.instantiate()
