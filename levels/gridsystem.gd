@@ -55,6 +55,8 @@ func _process(delta):
 					elif get_cell_tile_data(0,tile_pos) == null:
 						erase_cell(1,previous_tile_pos)
 						can_destroy = false
+			if player.current_hammer == 0:
+				erase_cell(1,previous_tile_pos)
 		else:
 			reach = false
 			can_build= false
@@ -107,3 +109,11 @@ func can_destroy_setter():
 	else:
 		can_destroy = false
 		erase_cell(1,previous_tile_pos)
+
+func reset_everything():
+	reach = false
+	erase_cell(1,previous_tile_pos)
+	can_build = false
+	can_destroy = false
+	can_destroy_current_block = false
+	is_locked = false

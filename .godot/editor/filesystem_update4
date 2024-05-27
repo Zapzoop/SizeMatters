@@ -1,2 +1,5 @@
 res://gui/mainmenu/main_menu.tscn
 res://levels/gridsystem.gd
+res://hammer/hammer.gd
+res://player/player.tscn
+res://hammer/hammer.tscn

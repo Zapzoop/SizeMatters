@@ -21,3 +21,4 @@ func change_hammer(new):
 	texture = load(textures[new])
 	position = positions[new]
 	Global.player.correct_pos(new)
+	Global.current_tilemap.reset_everything()
