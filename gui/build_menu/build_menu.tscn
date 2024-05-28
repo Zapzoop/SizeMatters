@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://bkmbpt46uu7c3"]
+
+[ext_resource type="Script" path="res://gui/build_menu/build_menu.gd" id="1_ue7tw"]
+[ext_resource type="Texture2D" uid="uid://bn1k4jgaomsb3" path="res://icon.svg" id="1_wvw57"]
+[ext_resource type="Texture2D" uid="uid://4km17oywmnl1" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0001.png" id="2_mhm5b"]
+[ext_resource type="Texture2D" uid="uid://b4ocm5eevx6ae" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0007.png" id="3_jr43q"]
+[ext_resource type="Texture2D" uid="uid://b483q13l2i33p" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0013.png" id="4_hqt7n"]
+[ext_resource type="Texture2D" uid="uid://bjpdemql1oa7u" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0016.png" id="5_k6ak7"]
+[ext_resource type="Texture2D" uid="uid://dkyj3v4dry5e8" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0023.png" id="6_2v2s4"]
+[ext_resource type="Texture2D" uid="uid://bd3i0qix2ib18" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0042.png" id="7_48qyw"]
+[ext_resource type="Texture2D" uid="uid://16pqm7ldig7u" path="res://sprites/crate.png" id="7_jroki"]
+
+[sub_resource type="Animation" id="Animation_rp4yt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(136, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7fug2"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(136, 648), Vector2(136, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.241484, 1),
+"update": 0,
+"values": [Vector2(1016, 0), Vector2(1152, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5q6c8"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(136, 648), Vector2(136, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.241484, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(1016, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8xii"]
+_data = {
+"RESET": SubResource("Animation_rp4yt"),
+"close": SubResource("Animation_7fug2"),
+"open": SubResource("Animation_5q6c8")
+}
+
+[node name="build_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ue7tw")
+
+[node name="Cancel" type="Button" parent="."]
+layout_mode = 0
+anchor_right = 0.0894097
+anchor_bottom = 0.0478395
+offset_right = -95.0
+offset_bottom = -23.0
+text = "Cancel build"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.11806
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_right = 1288.0
+offset_bottom = 648.0
+grow_horizontal = 0
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="obj1" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_mhm5b")
+expand_mode = 5
+
+[node name="obj2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_jr43q")
+expand_mode = 5
+
+[node name="obj3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_hqt7n")
+expand_mode = 5
+
+[node name="obj4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_k6ak7")
+expand_mode = 5
+
+[node name="obj5" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_2v2s4")
+expand_mode = 5
+
+[node name="obj6" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_48qyw")
+expand_mode = 5
+
+[node name="obj7" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_jroki")
+expand_mode = 5
+
+[node name="placeholder" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("1_wvw57")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j8xii")
+}
+
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj1" to="." method="_on_obj_1_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj2" to="." method="_on_obj_2_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj3" to="." method="_on_obj_3_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj4" to="." method="_on_obj_4_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj5" to="." method="_on_obj_5_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj6" to="." method="_on_obj_6_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj7" to="." method="_on_obj_7_gui_input"]

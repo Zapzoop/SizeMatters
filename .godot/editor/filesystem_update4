@@ -1,8 +1,5 @@
-res://hammer/hammer.tscn
-res://levels/level_1.tscn
+res://gui/mainmenu/main_menu.tscn
 res://player/player.tscn
-res://player/Player.gd
+res://hammer/hammer.tscn
+res://autoload/global.gd
 res://hammer/hammer.gd
-res://enemy.gd
-res://enemies/enemy.tscn
-res://enemies/mole/mole.tscn

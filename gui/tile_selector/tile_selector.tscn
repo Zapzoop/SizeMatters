@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch0xhn883ck0w"]
+
+[ext_resource type="Texture2D" uid="uid://noeiup4tockx" path="res://sprites/tile_indicator/indicator1.png" id="1_wr54y"]
+[ext_resource type="Texture2D" uid="uid://dnnr7f0iho1pk" path="res://sprites/tile_indicator/indicator2.png" id="2_kkq0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scwxe"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wr54y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kkq0c")
+}],
+"loop": true,
+"name": &"indicator",
+"speed": 5.0
+}]
+
+[node name="TileSelector" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_scwxe")
+animation = &"indicator"
+autoplay = "indicator"
+frame_progress = 0.670569

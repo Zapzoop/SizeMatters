@@ -18,6 +18,10 @@ func _process(delta):
 		change_hammer(current)
 	
 func change_hammer(new):
-	
 	texture = load(textures[new])
 	position = positions[new]
+	Global.player.correct_pos(new)
+	if Global.build_menu != null:
+		Global.reset_build_menu()
+	else:
+		Global.current_tilemap.reset_everything()
