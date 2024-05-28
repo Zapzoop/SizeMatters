@@ -23,3 +23,9 @@ func draw_me(string):
 func cancel_build():
 	current_tilemap.release()
 	build_menu = null
+
+func reset_build_menu():
+	current_tilemap.reset_everything()
+	build_menu.remove_me()
+	current_tilemap.release()
+	build_menu = null
