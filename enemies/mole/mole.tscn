@@ -1,5 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://behnrftxc42e0"]
+[gd_scene load_steps=8 format=3 uid="uid://behnrftxc42e0"]
 
+[ext_resource type="Texture2D" uid="uid://bqfc21b5lm606" path="res://enemies/mole/void.png" id="1_g3pyq"]
+[ext_resource type="Texture2D" uid="uid://w7eb2xs533h3" path="res://enemies/mole/mole_hurt.png" id="1_vs00d"]
+[ext_resource type="Texture2D" uid="uid://b8lrs44skbkb8" path="res://enemies/mole/mole.png" id="2_2u6so"]
 [ext_resource type="Script" path="res://enemy.gd" id="2_cmunl"]
 [ext_resource type="Texture2D" uid="uid://7a5wapgqyk1l" path="res://enemies/mole/dirt_mound.png" id="3_q6ury"]
 
@@ -7,7 +10,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("1_vs00d")
 }],
 "loop": true,
 "name": &"hurt",
@@ -15,13 +18,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("2_2u6so")
 }],
 "loop": true,
 "name": &"out",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g3pyq")
+}],
 "loop": true,
 "name": &"underground",
 "speed": 5.0
@@ -32,8 +38,10 @@ radius = 7.52942
 height = 31.0304
 
 [node name="mole" type="AnimatedSprite2D"]
+position = Vector2(-0.25, -0.25)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dwwco")
-animation = &"hurt"
+animation = &"out"
 autoplay = "underground"
 script = ExtResource("2_cmunl")
 

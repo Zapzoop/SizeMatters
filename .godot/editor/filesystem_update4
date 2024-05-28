@@ -1,14 +1,7 @@
+res://enemies/mole/mole.tscn
 res://gui/mainmenu/main_menu.tscn
 res://mouse/mouse.tscn
 res://player/player.tscn
 res://hammer/hammer.tscn
 res://levels/level_1.tscn
 res://gui/level_selector/level_selector.tscn
-res://enemies/mole/mole.tscn
-res://autoload/global.gd
-res://hammer/hammer.gd
-res://levels/level_1.gd
-res://gui/level_selector/level_selector.gd
-res://gui/mainmenu/main_menu.gd
-res://mouse/mouse.gd
-res://player/Player.gd
