@@ -60,6 +60,11 @@ change_hammer={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_5="mechanics"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

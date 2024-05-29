@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkmbpt46uu7c3"]
+[gd_scene load_steps=15 format=3 uid="uid://bkmbpt46uu7c3"]
 
 [ext_resource type="Script" path="res://gui/build_menu/build_menu.gd" id="1_ue7tw"]
 [ext_resource type="Texture2D" uid="uid://bn1k4jgaomsb3" path="res://icon.svg" id="1_wvw57"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dkyj3v4dry5e8" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0023.png" id="6_2v2s4"]
 [ext_resource type="Texture2D" uid="uid://bd3i0qix2ib18" path="res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0042.png" id="7_48qyw"]
 [ext_resource type="Texture2D" uid="uid://16pqm7ldig7u" path="res://sprites/crate.png" id="7_jroki"]
+[ext_resource type="Texture2D" uid="uid://bkntj728hh6ov" path="res://temp_art/fan.png" id="9_e3fwk"]
 
 [sub_resource type="Animation" id="Animation_rp4yt"]
 length = 0.001
@@ -169,6 +170,11 @@ layout_mode = 2
 texture = ExtResource("7_jroki")
 expand_mode = 5
 
+[node name="obj8" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_e3fwk")
+expand_mode = 5
+
 [node name="placeholder" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -187,3 +193,4 @@ libraries = {
 [connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj5" to="." method="_on_obj_5_gui_input"]
 [connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj6" to="." method="_on_obj_6_gui_input"]
 [connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj7" to="." method="_on_obj_7_gui_input"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/obj8" to="." method="_on_obj_8_gui_input"]

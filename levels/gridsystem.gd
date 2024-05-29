@@ -46,6 +46,7 @@ func _process(delta):
 					elif get_cell_tile_data(0,tile_pos) != null:
 						erase_cell(1,previous_tile_pos)
 						can_build = false
+
 			if player.current_hammer == 2:
 				if tile_pos != previous_tile_pos or previous_tile_pos == null:
 					if get_cell_tile_data(0,tile_pos) != null:
@@ -117,3 +118,8 @@ func reset_everything():
 	can_destroy = false
 	can_destroy_current_block = false
 	is_locked = false
+
+func get_data(layer,coords):
+	print("Atlas_coords "+ str(get_cell_atlas_coords(layer,coords)))
+	print("Alternative_tile " + str(get_cell_alternative_tile(layer,coords)))
+	print("Source_id " + str(get_cell_source_id(layer,coords)))

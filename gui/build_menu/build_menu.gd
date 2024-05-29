@@ -56,3 +56,9 @@ func _input(event):
 func _on_cancel_pressed():
 	Global.cancel_build()
 	self.queue_free()
+
+
+func _on_obj_8_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			Global.draw_me_mechanic("fan")

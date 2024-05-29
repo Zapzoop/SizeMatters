@@ -1,0 +1,7 @@
+CollisionShape2D
+Area2D
+TextureRect
+Sprite2D
+Marker2D
+Camera2D
+RigidBody2D
