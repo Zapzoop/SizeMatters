@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 var current_hammer = null
+var grabbed = false
+
+@onready var hammer = $Marker2D/Hand/Marker2D/hammer
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -19,17 +22,31 @@ func _process(delta):
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and grabbed == false:
 		velocity.y += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
+		if grabbed == false:
+			velocity.y = JUMP_VELOCITY
+		else:
+			velocity.y = -SPEED
+	
+	if hammer.flip_v:
+		if global_position.y <=  $Marker2D/Hand/Marker2D/hammer/long_head_2.global_position.y and grabbed:
+			velocity.y = JUMP_VELOCITY
+			grabbed = false
+			hammer.offset.y = hammer.offsets[hammer.current]
+	else:
+		if global_position.y <=  $Marker2D/Hand/Marker2D/hammer/long_head_1.global_position.y and grabbed:
+			velocity.y = JUMP_VELOCITY
+			grabbed = false
+			hammer.offset.y = hammer.offsets[hammer.current]
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
-	if direction:
+	if direction and !grabbed:
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.play("run")
 		if direction == -1:
@@ -48,8 +65,13 @@ func _physics_process(delta):
 		
 	if not is_on_floor():
 		$AnimatedSprite2D.play("jump")
-	
-	$Marker2D.look_at(get_global_mouse_position())
+	if grabbed == false:
+		$Marker2D.look_at(get_global_mouse_position())
+	else:
+		if $Marker2D/Hand/Marker2D/hammer.flip_v == false:
+			hammer.global_rotation = 0
+		else:
+			hammer.global_rotation = 3
 	
 	move_and_slide()
 
