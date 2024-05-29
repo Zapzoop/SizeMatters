@@ -14,6 +14,8 @@ var self_pos_in_map
 var left_one
 var right_one
 
+var in_range = []
+
 func _ready():
 	basic_setup()
 	tilemap = Global.current_tilemap
@@ -32,6 +34,7 @@ func check():
 		if left_side_block_value == true:
 			direction = "right"
 			left_area.process_mode = Node.PROCESS_MODE_DISABLED
+			left_area.hide()
 			Global.reset_build_menu()
 		else:
 			self.queue_free()
@@ -41,6 +44,7 @@ func check():
 		if right_side_block_value == true:
 			direction = "left"
 			right_area.process_mode = Node.PROCESS_MODE_DISABLED
+			right_area.hide()
 			Global.reset_build_menu()
 		else:
 			self.queue_free()
@@ -51,17 +55,55 @@ func check():
 		if left_side_block_value == true and  right_side_block_value == false:
 			direction = "right"
 			left_area.process_mode = Node.PROCESS_MODE_DISABLED
+			left_area.hide()
 			Global.reset_build_menu()
 		elif left_side_block_value == false and  right_side_block_value == true:
 			direction = "left"
 			right_area.process_mode = Node.PROCESS_MODE_DISABLED
+			right_area.hide()
 			Global.reset_build_menu()
-		elif left_side_block_value == true and  right_side_block_value == true or left_side_block_value == false and  right_side_block_value == false:
+		elif left_side_block_value == true and  right_side_block_value == true:
 			direction = "left"
 			right_area.process_mode = Node.PROCESS_MODE_DISABLED
+			right_area.hide()
+			Global.reset_build_menu()
+		elif left_side_block_value == false and  right_side_block_value == false:
+			self.queue_free()
 			Global.reset_build_menu()
 
 func _process(delta):
-	if fan_on:
-		pass
+	pass
 
+func _physics_process(delta):
+	if fan_on:
+		for i in in_range:
+			if direction == "left":
+				i.apply_force(Vector2(-1100,0))
+			else:
+				i.apply_force(Vector2(1100,0))
+
+
+func _on_range_left_body_entered(body):
+	if body.is_in_group("light"):
+		in_range.append(body)
+		#print("left append")
+
+
+func _on_range_right_body_entered(body):
+	if body.is_in_group("light"):
+		in_range.append(body)
+		#print("right append")
+
+
+func _on_range_left_body_exited(body):
+	if body.is_in_group("light"):
+		body.linear_velocity = Vector2.ZERO
+		#body.constant_force = Vector2(0, 0)
+		in_range.erase(body)
+
+
+func _on_range_right_body_exited(body):
+	if body.is_in_group("light"):
+		body.linear_velocity = Vector2.ZERO
+		#body.constant_force = Vector2(0, 0)
+		in_range.erase(body)
