@@ -15,19 +15,18 @@ var locked_tile_pos:Vector2i
 var is_locked = false
 
 var can_build = false
-var can_destroy = false
 var can_destroy_current_block = false
-var can_grab = false
 var can_grab_current_block = false
 
-var range = Vector2i(3,3) #inclusive
+var range_for_build = Vector2i(3,3) #inclusive
+var range_for_movement = Vector2i(1,4)
 var reach = false
 
 func _ready():
 	Global.current_tilemap = self
 	pass
 
-func is_inside_range(pos):
+func is_inside_range(pos,range):
 	var player_pos = local_to_map(player.global_position)
 	if (pos.x <= player_pos.x + range.x and pos.x >= player_pos.x - range.x) and (pos.y <= player_pos.y + range.y and pos.y >= player_pos.y - range.y):
 		return true
@@ -37,14 +36,14 @@ func is_inside_range(pos):
 func _process(delta):
 	if !is_locked:
 		tile_pos = local_to_map(get_global_mouse_position())
-		if is_inside_range(tile_pos):
+		if is_inside_range(tile_pos,range_for_build):
 			reach = true
 			if player.current_hammer == 1:
 				if tile_pos != previous_tile_pos or previous_tile_pos == null:
 					if get_cell_tile_data(0,tile_pos) == null:
 						erase_cell(1,previous_tile_pos)
 						set_cell(1,tile_pos,2,Vector2i(0,0),1)
-						can_build_setter()
+						can_build = true
 					elif get_cell_tile_data(0,tile_pos) != null:
 						erase_cell(1,previous_tile_pos)
 						can_build = false
@@ -56,21 +55,26 @@ func _process(delta):
 						can_destroy_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
 					elif get_cell_tile_data(0,tile_pos) == null:
 						erase_cell(1,previous_tile_pos)
-						can_destroy = false
-			if player.current_hammer == 0:
-				
-				if tile_pos != previous_tile_pos or previous_tile_pos == null:
-					if get_cell_tile_data(0,tile_pos) != null:
-						erase_cell(1,previous_tile_pos)
-						set_cell(1,tile_pos,2,Vector2i(0,0),1)
-						can_grab_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
-					elif get_cell_tile_data(0,tile_pos) == null:
-						erase_cell(1,previous_tile_pos)
-						can_destroy = false
+						can_destroy_current_block = false
+			reach = false
+			if is_inside_range(tile_pos,range_for_movement):
+				reach = true
+				if player.current_hammer == 0:
+					if tile_pos != previous_tile_pos or previous_tile_pos == null:
+						if get_cell_tile_data(0,tile_pos) != null:
+							erase_cell(1,previous_tile_pos)
+							set_cell(1,tile_pos,2,Vector2i(0,0),1)
+							can_grab_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
+						elif get_cell_tile_data(0,tile_pos) == null:
+							erase_cell(1,previous_tile_pos)
+							can_grab_current_block = false
+			elif player.current_hammer == 0:
+				erase_cell(1,previous_tile_pos)
 		else:
 			reach = false
 			can_build= false
-			can_destroy =false
+			can_destroy_current_block = false
+			can_grab_current_block = false
 			erase_cell(1,previous_tile_pos)
 		previous_tile_pos = tile_pos
 
@@ -93,6 +97,7 @@ func _input(event):
 			if player.global_position.x > get_global_mouse_position().x:
 				player.global_position.x = get_global_mouse_position().x +17
 			player.hammer.set_fixed_pos()
+			can_grab_current_block = false
 			
 func place_block(vect:Vector2i):
 	var player_pos  = local_to_map(player.global_position)
@@ -108,32 +113,10 @@ func release():
 	mouse.show()
 	is_locked = false
 
-func can_build_setter():
-	if reach == true and player.current_hammer == 1:
-		can_build = true
-	elif reach == true and player.current_hammer != 1:
-		can_build = false
-	else:
-		can_build = false
-		erase_cell(1,previous_tile_pos)
-
-
-func can_destroy_setter():
-	if reach == true and player.current_hammer == 2:
-		can_destroy = true
-	elif reach == true and player.current_hammer != 2:
-		can_destroy = false
-	else:
-		can_destroy = false
-		erase_cell(1,previous_tile_pos)
-
-func can_grab_setter():
-	pass
-
 func reset_everything():
 	reach = false
 	erase_cell(1,previous_tile_pos)
 	can_build = false
-	can_destroy = false
 	can_destroy_current_block = false
+	can_grab_current_block = false
 	is_locked = false

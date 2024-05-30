@@ -13,12 +13,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("change_hammer") and $/root.get_child(1).get_child(1).grabbed == false:
+	if Input.is_action_just_pressed("change_hammer") and Global.player.grabbed == false:
 		current+=1
 		if current > 2:
 			current = 0
 		change_hammer(current)
-	if $/root.get_child(1).get_child(1).grabbed == true:
+	if Global.player.grabbed == true:
 		global_position = fixed_pos
 	else:
 		global_position = get_parent().get_parent().global_position
@@ -27,7 +27,7 @@ func _process(delta):
 		offset.y =  offsets[current] *-1
 	else:
 		offset.y = offsets[current]
-	print(global_rotation)
+	#print(global_rotation)
 func set_fixed_pos():
 	fixed_pos = get_parent().get_parent().global_position
 		
