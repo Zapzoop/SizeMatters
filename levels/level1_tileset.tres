@@ -1,17 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://drjsuntdb1f2p"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bcmdlu6no37cx"]
 
-[ext_resource type="Script" path="res://levels/level_1.gd" id="1_fegh1"]
-[ext_resource type="TileSet" uid="uid://bcmdlu6no37cx" path="res://levels/level1_tileset.tres" id="2_2oaeq"]
-[ext_resource type="PackedScene" uid="uid://cn1bxi51sflmh" path="res://player/player.tscn" id="3_4kf5p"]
-[ext_resource type="Script" path="res://levels/gridsystem.gd" id="3_fdqtu"]
-[ext_resource type="PackedScene" uid="uid://c8wmmovvl4ihe" path="res://mouse/mouse.tscn" id="4_o4v5j"]
-[ext_resource type="PackedScene" uid="uid://d2n4c0wie4dme" path="res://enemies/mole/mole.tscn" id="5_ijl16"]
-[ext_resource type="PackedScene" uid="uid://dqoj4ebhos4n7" path="res://mechanics/crates/wooden/wooden_crate.tscn" id="8_6qwqs"]
-[ext_resource type="PackedScene" uid="uid://b1ob5eaomskxb" path="res://mechanics/pressure_plate/pressure_plate.tscn" id="9_xdqcr"]
+[ext_resource type="Texture2D" uid="uid://cjqartjvu6m6p" path="res://sprites/monochrome_tilemap_transparent.png" id="1_8apby"]
+[ext_resource type="PackedScene" uid="uid://ch0xhn883ck0w" path="res://gui/tile_selector/tile_selector.tscn" id="2_fpggk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofhmy"]
 resource_name = "Tilemap"
-texture = ExtResource("2_pkldp")
+texture = ExtResource("1_8apby")
 separation = Vector2i(1, 1)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -168,7 +162,6 @@ separation = Vector2i(1, 1)
 11:2/0/physics_layer_0/angular_velocity = 0.0
 11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:2/0/custom_data_0 = true
-11:2/0/custom_data_1 = true
 12:2/0 = 0
 12:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:2/0/physics_layer_0/angular_velocity = 0.0
@@ -291,19 +284,16 @@ separation = Vector2i(1, 1)
 7:4/0/physics_layer_0/angular_velocity = 0.0
 7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:4/0/custom_data_0 = true
-7:4/0/custom_data_1 = true
 8:4/0 = 0
 8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:4/0/physics_layer_0/angular_velocity = 0.0
 8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:4/0/custom_data_0 = true
-8:4/0/custom_data_1 = true
 9:4/0 = 0
 9:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:4/0/physics_layer_0/angular_velocity = 0.0
 9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:4/0/custom_data_0 = true
-9:4/0/custom_data_1 = true
 10:4/0 = 0
 10:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:4/0/physics_layer_0/angular_velocity = 0.0
@@ -364,19 +354,16 @@ separation = Vector2i(1, 1)
 7:5/0/physics_layer_0/angular_velocity = 0.0
 7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:5/0/custom_data_0 = true
-7:5/0/custom_data_1 = true
 8:5/0 = 0
 8:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:5/0/physics_layer_0/angular_velocity = 0.0
 8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:5/0/custom_data_0 = true
-8:5/0/custom_data_1 = true
 9:5/0 = 0
 9:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:5/0/physics_layer_0/angular_velocity = 0.0
 9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:5/0/custom_data_0 = true
-9:5/0/custom_data_1 = true
 10:5/0 = 0
 10:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:5/0/physics_layer_0/angular_velocity = 0.0
@@ -445,19 +432,16 @@ separation = Vector2i(1, 1)
 7:6/0/physics_layer_0/angular_velocity = 0.0
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:6/0/custom_data_0 = true
-7:6/0/custom_data_1 = true
 8:6/0 = 0
 8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:6/0/physics_layer_0/angular_velocity = 0.0
 8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:6/0/custom_data_0 = true
-8:6/0/custom_data_1 = true
 9:6/0 = 0
 9:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:6/0/physics_layer_0/angular_velocity = 0.0
 9:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:6/0/custom_data_0 = true
-9:6/0/custom_data_1 = true
 10:6/0 = 0
 10:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:6/0/physics_layer_0/angular_velocity = 0.0
@@ -1386,65 +1370,13 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xxsiv"]
 resource_name = "indicator"
-scenes/1/scene = ExtResource("3_25esv")
+scenes/1/scene = ExtResource("2_fpggk")
 
-[sub_resource type="TileSet" id="TileSet_xvm2s"]
+[resource]
 physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "destructable"
 custom_data_layer_0/type = 1
-custom_data_layer_1/name = "can_attach"
-custom_data_layer_1/type = 1
+custom_data_layer_1/name = "grabbable"
+custom_data_layer_1/type = 0
 sources/2 = SubResource("TileSetScenesCollectionSource_xxsiv")
 sources/0 = SubResource("TileSetAtlasSource_ofhmy")
-
-[node name="Level1" type="Node2D"]
-script = ExtResource("1_fegh1")
-
-[node name="TileMap" type="TileMap" parent="."]
-z_index = 1
-tile_set = ExtResource("2_2oaeq")
-format = 2
-layer_0/name = "env"
-layer_0/tile_data = PackedInt32Array(196611, 983040, 5, 196612, 1048576, 5, 196613, 1048576, 5, 196614, 1048576, 5, 196615, 1048576, 5, 196616, 1048576, 5, 196617, 1048576, 5, 196618, 1048576, 5, 196619, 1048576, 5, 196620, 1114112, 5, 262156, 1114112, 7, 262147, 983040, 7, 262148, 1048576, 7, 262149, 1048576, 7, 262150, 1048576, 7, 262151, 1048576, 7, 262152, 1048576, 7, 262153, 1048576, 7, 262154, 1048576, 7, 262155, 1048576, 7, 196629, 458752, 4, 262165, 458752, 5, 327701, 458752, 6, 196630, 524288, 4, 262166, 524288, 5, 327702, 524288, 6, 196631, 589824, 4, 262167, 589824, 5, 327703, 589824, 6, 65561, 458752, 4, 131097, 458752, 5, 196633, 458752, 6, 65562, 524288, 4, 131098, 524288, 5, 196634, 524288, 6, 65563, 589824, 4, 131099, 589824, 5, 196635, 589824, 6, -131043, 458752, 4, -65507, 458752, 5, 29, 458752, 6, -131042, 524288, 4, -65506, 524288, 5, 30, 524288, 6, -131041, 589824, 4, -65505, 589824, 5, 31, 589824, 6, 196628, 720896, 2, 196608, 983040, 5, 196609, 1048576, 5, 196610, 1114112, 5, 262141, 983040, 5, 262142, 1048576, 5, 262143, 1114112, 5, 262138, 983040, 5, 262139, 1048576, 5, 262140, 1114112, 5, 262135, 983040, 5, 262136, 1048576, 5, 262137, 1114112, 5, 262132, 983040, 5, 262133, 1048576, 5, 262134, 1114112, 5, 262129, 983040, 5, 262130, 1048576, 5, 262131, 1114112, 5, 262126, 983040, 5, 262127, 1048576, 5, 262128, 1114112, 5, 262123, 983040, 5, 262124, 1048576, 5, 262125, 1114112, 5, 262120, 983040, 5, 262121, 1048576, 5, 262122, 1114112, 5, 262117, 983040, 5, 262118, 1048576, 5, 262119, 1114112, 5, 196621, 983040, 5, 196622, 1048576, 5, 196623, 1114112, 5, 196624, 983040, 5, 196625, 1048576, 5, 196626, 1114112, 5, 131090, 720896, 2)
-layer_1/name = "selection"
-layer_1/tile_data = PackedInt32Array()
-layer_2/name = "mechanics"
-layer_2/tile_data = PackedInt32Array()
-script = ExtResource("3_fdqtu")
-
-[node name="Player" parent="." instance=ExtResource("3_4kf5p")]
-z_index = 2
-position = Vector2(128, 1)
-
-[node name="Mouse" parent="." instance=ExtResource("4_o4v5j")]
-z_index = 3
-scale = Vector2(0.6, 0.6)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 182.0
-offset_bottom = 118.0
-text = "Level 1"
-metadata/_edit_use_anchors_ = true
-
-[node name="mole" parent="." instance=ExtResource("5_ijl16")]
-position = Vector2(134, 32)
-
-[node name="right" type="Node2D" parent="mole"]
-position = Vector2(75, 5)
-
-[node name="left" type="Node2D" parent="mole"]
-position = Vector2(-85, 7)
-
-[node name="WoodenCrate" parent="." instance=ExtResource("8_6qwqs")]
-position = Vector2(200, 24)
-
-[node name="WoodenCrate2" parent="." instance=ExtResource("8_6qwqs")]
-position = Vector2(248, 24)
-
-[node name="PressurePlate" parent="." instance=ExtResource("9_xdqcr")]
-position = Vector2(296, 24)
-
-[node name="PressurePlate2" parent="." instance=ExtResource("9_xdqcr")]
-position = Vector2(360, 40)

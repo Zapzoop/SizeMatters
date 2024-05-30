@@ -69,8 +69,8 @@ texture = ExtResource("6_i0v4e")
 rotation = -0.784356
 
 [node name="hammer" parent="Marker2D/Hand/Marker2D" instance=ExtResource("7_2s3sa")]
-position = Vector2(-1.0155, 5.9974)
 rotation = -3.14159
+offset = Vector2(0, -5)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -6)
@@ -83,3 +83,4 @@ target_position = Vector2(0, 3.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
