@@ -51,6 +51,9 @@ func _process(delta):
 func _input(event):
 	if Input.is_action_pressed("click") and Global.player.current_hammer == 2:
 		if tilemap.tile_pos ==  tilemap.local_to_map(get_global_position()):
+			if not in_range.is_empty():
+				for i in in_range:
+					i.power = false
 			self.queue_free()
 
 func _on_area_2d_body_entered(body):
@@ -62,7 +65,6 @@ func _on_area_2d_body_entered(body):
 			$AnimatedSprite2D.play("pressing")
 			$AnimatedSprite2D.play("pressed")
 
-
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("mechanics"):
 		if is_pressed == true and body == body_pressing:
@@ -71,7 +73,6 @@ func _on_area_2d_body_exited(body):
 			body_pressing = null
 			$AnimatedSprite2D.play("un_pressing")
 			$AnimatedSprite2D.play("not_pressed")
-
 
 func _on_power_others_body_entered(body):
 	if body.is_in_group("can_be_powered"):

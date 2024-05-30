@@ -46,7 +46,6 @@ func _process(delta):
 					elif get_cell_tile_data(0,tile_pos) != null:
 						erase_cell(1,previous_tile_pos)
 						can_build = false
-
 			if player.current_hammer == 2:
 				if tile_pos != previous_tile_pos or previous_tile_pos == null:
 					erase_cell(1,previous_tile_pos)
@@ -75,6 +74,7 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			mouse.hide()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_destroy_current_block:
+			
 			set_cell(0,tile_pos,2,Vector2i(0,0),-1)
 			can_destroy_current_block = false
 
