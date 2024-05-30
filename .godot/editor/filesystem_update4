@@ -1,20 +1,2 @@
-res://gui/mainmenu/main_menu.tscn
-<<<<<<< HEAD
-res://mechanics/pressure_plate/pressure_plate.tscn
 res://levels/level_1.tscn
-res://mechanics/fan/fan.tscn
-res://player/player.tscn
-res://mechanics/crates/wooden/wooden_crate.tscn
-res://gui/build_menu/build_menu.tscn
-res://mechanics/pressure_plate/pressure_plate.gd
-res://gui/build_menu/build_menu.gd
-=======
 res://levels/level1_tileset.tres
-res://hammer/hammer.tscn
-res://gui/tile_selector/tile_selector.tscn
-res://levels/level_1.tscn
-res://hammer/long_hammer/long_hammer_test.tscn
-res://player/player.tscn
-res://player/Player.gd
-res://hammer/hammer.gd
->>>>>>> main
