@@ -1,10 +1,9 @@
 res://gui/mainmenu/main_menu.tscn
 res://levels/level1_tileset.tres
+res://player/Player.gd
 res://hammer/hammer.tscn
 res://gui/tile_selector/tile_selector.tscn
 res://levels/level_1.tscn
-res://long_hammer_test.tscn
+res://hammer/long_hammer/long_hammer_test.tscn
 res://player/player.tscn
 res://levels/gridsystem.gd
-res://hammer/long_hammer/long_hammer_test.tscn
-res://hammer/hammer.gd

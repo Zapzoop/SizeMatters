@@ -62,6 +62,8 @@ func _process(delta):
 				if player.current_hammer == 0:
 					if tile_pos != previous_tile_pos or previous_tile_pos == null:
 						if get_cell_tile_data(0,tile_pos) != null:
+							if get_cell_tile_data(0,Vector2i(tile_pos.x,tile_pos.y-1)) != null:
+								return
 							erase_cell(1,previous_tile_pos)
 							set_cell(1,tile_pos,2,Vector2i(0,0),1)
 							can_grab_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
