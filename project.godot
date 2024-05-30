@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*res://autoload/global.gd"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/paole/Desktop/coding/godot/recording.avi"
+
 [input]
 
 escape={
