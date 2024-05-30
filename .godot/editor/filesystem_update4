@@ -1,8 +1,10 @@
-res://mechanics/pressure_plate/pressure_plate.tscn
-res://mechanics/pressure_plate/pressure_plate.gd
-res://levels/level_1.tscn
 res://gui/mainmenu/main_menu.tscn
+res://mechanics/fan/fan.gd
+res://mechanics/pressure_plate/pressure_plate.tscn
+res://levels/level_1.tscn
 res://mechanics/fan/fan.tscn
-res://mechanics/crates/wooden/wooden_crate.tscn
 res://player/player.tscn
-res://player/Player.gd
+res://mechanics/crates/wooden/wooden_crate.tscn
+res://levels/gridsystem.gd
+res://mechanics/crates/wooden/wooden_crate.gd
+res://mechanics/pressure_plate/pressure_plate.gd

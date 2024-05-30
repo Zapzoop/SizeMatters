@@ -38,11 +38,20 @@ func check():
 func _process(delta):
 	if power:
 		can_power_others = true
-	
+	elif power == false:
+		can_power_others = false
+
 	if can_power_others:
 		for i in in_range:
 			i.power = true
+	elif can_power_others:
+		for i in in_range:
+			i.power = false
 
+func _input(event):
+	if Input.is_action_pressed("click") and Global.player.current_hammer == 2:
+		if tilemap.tile_pos ==  tilemap.local_to_map(get_global_position()):
+			self.queue_free()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("mechanics"):
@@ -70,4 +79,5 @@ func _on_power_others_body_entered(body):
 
 func _on_power_others_body_exited(body):
 	if body.is_in_group("can_be_powered"):
+		body.power = false
 		in_range.erase(body)

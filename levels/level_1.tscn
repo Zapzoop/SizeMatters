@@ -1402,6 +1402,7 @@ sources/0 = SubResource("TileSetAtlasSource_ofhmy")
 script = ExtResource("1_fegh1")
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = 1
 tile_set = SubResource("TileSet_xvm2s")
 format = 2
 layer_0/name = "env"
@@ -1413,9 +1414,11 @@ layer_2/tile_data = PackedInt32Array()
 script = ExtResource("3_fdqtu")
 
 [node name="Player" parent="." instance=ExtResource("3_4kf5p")]
+z_index = 2
 position = Vector2(128, 1)
 
 [node name="Mouse" parent="." instance=ExtResource("4_o4v5j")]
+z_index = 3
 scale = Vector2(0.6, 0.6)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

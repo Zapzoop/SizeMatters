@@ -71,8 +71,10 @@ func check():
 			self.queue_free()
 			Global.reset_build_menu()
 
-func _process(delta):
-	pass
+func _input(event):
+	if Input.is_action_pressed("click") and Global.player.current_hammer == 2:
+		if tilemap.tile_pos ==  tilemap.local_to_map(get_global_position()):
+			self.queue_free()
 
 func _physics_process(delta):
 	if power:
