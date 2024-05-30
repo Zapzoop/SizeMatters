@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name Mechanics
 
+@export var power:bool = false
 @export var destructable:bool
 @export var large_version:bool
 @export var buildable:bool

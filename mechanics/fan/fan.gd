@@ -1,6 +1,6 @@
 extends Mechanics
 
-@export var fan_on:bool = false
+
 @export var fan_range:int = 3
 
 @onready var left_area = $range_left
@@ -75,7 +75,7 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
-	if fan_on:
+	if power:
 		for i in in_range:
 			if direction == "left":
 				i.apply_force(Vector2(-1100,0))
@@ -93,7 +93,6 @@ func _on_range_right_body_entered(body):
 	if body.is_in_group("light"):
 		in_range.append(body)
 		#print("right append")
-
 
 func _on_range_left_body_exited(body):
 	if body.is_in_group("light"):

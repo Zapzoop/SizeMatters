@@ -42,7 +42,7 @@ animations = [{
 radius = 3.0
 height = 28.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["mechanics"]]
 position = Vector2(0, 14)
 collision_layer = 17
 collision_mask = 17
@@ -77,3 +77,12 @@ rotation = -0.784356
 [node name="hammer" parent="Marker2D/Hand/Marker2D" instance=ExtResource("7_2s3sa")]
 position = Vector2(-1.0155, 5.9974)
 rotation = -3.14159
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(0, 3.2)
+collision_mask = 17
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+target_position = Vector2(0, 3.2)
