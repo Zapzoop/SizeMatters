@@ -37,11 +37,13 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			grabbed = false
 			hammer.offset.y = hammer.offsets[hammer.current]
+			hammer.look_at(get_global_mouse_position())
 	else:
 		if global_position.y <=  $Marker2D/Hand/Marker2D/hammer/long_head_1.global_position.y and grabbed:
 			velocity.y = JUMP_VELOCITY
 			grabbed = false
 			hammer.offset.y = hammer.offsets[hammer.current]
+			hammer.look_at(get_global_mouse_position())
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -72,7 +74,7 @@ func _physics_process(delta):
 			hammer.global_rotation = 0
 		else:
 			hammer.global_rotation = 3
-	
+			
 	move_and_slide()
 
 
