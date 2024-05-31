@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://blnlwl2figcgv"]
+
+[ext_resource type="Script" path="res://mechanics/vertical_door/lever.gd" id="1_ng13a"]
+[ext_resource type="Texture2D" uid="uid://bn1k4jgaomsb3" path="res://icon.svg" id="2_jeyu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aov7o"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlf7m"]
+size = Vector2(48, 48)
+
+[node name="lever" type="RigidBody2D"]
+script = ExtResource("1_ng13a")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_aov7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_jeyu7")
+
+[node name="range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_nlf7m")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 4.0
+offset_top = -37.0
+offset_right = 14.0
+offset_bottom = -17.0
+theme_override_font_sizes/font_size = 14
+text = "x"
