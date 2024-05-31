@@ -99,12 +99,12 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_build:
 			is_locked = true
 			locked_tile_pos = tile_pos
-			var ins = build_menu.instantiate()
-			canvas_layer.add_child(ins)
+			Global.build_menu.opened = true
+			Global.build_menu.anim.play("open")
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			mouse.hide()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_destroy_current_block:
-			
+			Global.build_menu.add_tile(get_cell_atlas_coords(0,tile_pos))
 			set_cell(0,tile_pos,2,Vector2i(0,0),-1)
 			can_destroy_current_block = false
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_grab_current_block:

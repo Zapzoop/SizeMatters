@@ -28,14 +28,14 @@ func check():
 	right_one = Vector2(self_pos_in_map.x + 1,self_pos_in_map.y)
 	if tilemap.get_cell_tile_data(0,left_one) == null and tilemap.get_cell_tile_data(0,right_one) == null:
 		self.queue_free()
-		Global.reset_build_menu()
+		#Global.reset_build_menu()
 	elif tilemap.get_cell_tile_data(0,left_one) != null and tilemap.get_cell_tile_data(0,right_one) == null:
 		var left_side_block_value = tilemap.get_cell_tile_data(0,left_one).get_custom_data("can_attach")
 		if left_side_block_value == true:
 			direction = "right"
 			left_area.process_mode = Node.PROCESS_MODE_DISABLED
 			left_area.hide()
-			Global.reset_build_menu()
+			#Global.reset_build_menu()
 		else:
 			self.queue_free()
 			Global.reset_build_menu()
@@ -45,7 +45,7 @@ func check():
 			direction = "left"
 			right_area.process_mode = Node.PROCESS_MODE_DISABLED
 			right_area.hide()
-			Global.reset_build_menu()
+			#Global.reset_build_menu()
 		else:
 			self.queue_free()
 			Global.reset_build_menu()
@@ -56,20 +56,20 @@ func check():
 			direction = "right"
 			left_area.process_mode = Node.PROCESS_MODE_DISABLED
 			left_area.hide()
-			Global.reset_build_menu()
+			#Global.reset_build_menu()
 		elif left_side_block_value == false and  right_side_block_value == true:
 			direction = "left"
 			right_area.process_mode = Node.PROCESS_MODE_DISABLED
 			right_area.hide()
-			Global.reset_build_menu()
+			#Global.reset_build_menu()
 		elif left_side_block_value == true and  right_side_block_value == true:
 			direction = "left"
 			right_area.process_mode = Node.PROCESS_MODE_DISABLED
 			right_area.hide()
-			Global.reset_build_menu()
+			#Global.reset_build_menu()
 		elif left_side_block_value == false and  right_side_block_value == false:
 			self.queue_free()
-			Global.reset_build_menu()
+			#Global.reset_build_menu()
 
 func _input(event):
 	if Input.is_action_pressed("click") and Global.player.current_hammer == 2:

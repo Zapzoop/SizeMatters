@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drjsuntdb1f2p"]
+[gd_scene load_steps=11 format=3 uid="uid://drjsuntdb1f2p"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_fegh1"]
 [ext_resource type="TileSet" uid="uid://bcmdlu6no37cx" path="res://levels/level1_tileset.tres" id="2_2oaeq"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://levels/gridsystem.gd" id="3_fdqtu"]
 [ext_resource type="PackedScene" uid="uid://c8wmmovvl4ihe" path="res://mouse/mouse.tscn" id="4_o4v5j"]
 [ext_resource type="PackedScene" uid="uid://d2n4c0wie4dme" path="res://enemies/mole/mole.tscn" id="5_ijl16"]
+[ext_resource type="PackedScene" uid="uid://bkmbpt46uu7c3" path="res://gui/build_menu/build_menu.tscn" id="6_k2jkx"]
 [ext_resource type="PackedScene" uid="uid://dqoj4ebhos4n7" path="res://mechanics/crates/wooden/wooden_crate.tscn" id="8_6qwqs"]
+[ext_resource type="PackedScene" uid="uid://bbagg5o5i4b5a" path="res://mechanics/fan/fan.tscn" id="9_3g1hq"]
 [ext_resource type="PackedScene" uid="uid://b1ob5eaomskxb" path="res://mechanics/pressure_plate/pressure_plate.tscn" id="9_xdqcr"]
 
 [node name="Level1" type="Node2D"]
@@ -40,6 +42,8 @@ offset_bottom = 118.0
 text = "Level 1"
 metadata/_edit_use_anchors_ = true
 
+[node name="build_menu" parent="CanvasLayer" instance=ExtResource("6_k2jkx")]
+
 [node name="mole" parent="." instance=ExtResource("5_ijl16")]
 position = Vector2(134, 32)
 
@@ -60,3 +64,6 @@ position = Vector2(296, 24)
 
 [node name="PressurePlate2" parent="." instance=ExtResource("9_xdqcr")]
 position = Vector2(360, 40)
+
+[node name="Fan" parent="." instance=ExtResource("9_3g1hq")]
+position = Vector2(280, 40)

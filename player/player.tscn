@@ -83,4 +83,3 @@ target_position = Vector2(0, 3.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-
