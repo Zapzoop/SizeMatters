@@ -56,10 +56,10 @@ func _process(delta):
 						can_build = false 
 			if player.current_hammer == 2: #If current hammer is destroy hammer
 				if tile_pos != previous_tile_pos or previous_tile_pos == null:
+					erase_cell(1,previous_tile_pos)
+					set_cell(1,tile_pos,2,Vector2i(0,0),1)
 					#If it is not empty then check if block can be destroyed or not
 					if get_cell_tile_data(0,tile_pos) != null:
-						erase_cell(1,previous_tile_pos)
-						set_cell(1,tile_pos,2,Vector2i(0,0),1)
 						can_destroy_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
 					elif get_cell_tile_data(0,tile_pos) == null:
 						erase_cell(1,previous_tile_pos)
@@ -99,11 +99,12 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_build:
 			is_locked = true
 			locked_tile_pos = tile_pos
-			var ins = build_menu.instantiate()
-			canvas_layer.add_child(ins)
+			Global.build_menu.opened = true
+			Global.build_menu.anim.play("open")
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			mouse.hide()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_destroy_current_block:
+			Global.build_menu.add_tile(get_cell_atlas_coords(0,tile_pos))
 			set_cell(0,tile_pos,2,Vector2i(0,0),-1)
 			can_destroy_current_block = false
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and is_locked == false and can_grab_current_block:
@@ -124,7 +125,7 @@ func place_block(vect:Vector2i):
 		return
 	set_cell(0,tile_pos,0,vect,0)
 	release()
-#Makes the locked to false and hides the mouse
+#Makes the locked to false and shows the mouse
 func release():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	mouse.show()
@@ -138,3 +139,8 @@ func reset_everything():
 	can_destroy_current_block = false
 	can_grab_current_block = false
 	is_locked = false
+
+func get_data(layer,coords):
+	print("Atlas_coords "+ str(get_cell_atlas_coords(layer,coords)))
+	print("Alternative_tile " + str(get_cell_alternative_tile(layer,coords)))
+	print("Source_id " + str(get_cell_source_id(layer,coords)))

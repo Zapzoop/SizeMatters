@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk5hx52fcmng7"]
+
+[ext_resource type="Script" path="res://mechanics/pulley/pulley.gd" id="1_r0oru"]
+[ext_resource type="Texture2D" uid="uid://dm50kql8qikvi" path="res://temp_art/pulley.png" id="2_s82od"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvc7i"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0r4cd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt7sa"]
+size = Vector2(16, 16)
+
+[node name="Pulley" type="RigidBody2D"]
+script = ExtResource("1_r0oru")
+enable_gravity = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pvc7i")
+
+[node name="mainpulley" type="Sprite2D" parent="."]
+texture = ExtResource("2_s82od")
+
+[node name="left_place" type="Area2D" parent="."]
+position = Vector2(-8, 16)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_place"]
+shape = SubResource("RectangleShape2D_0r4cd")
+
+[node name="right_place" type="Area2D" parent="."]
+position = Vector2(8, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_place"]
+shape = SubResource("RectangleShape2D_qt7sa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)

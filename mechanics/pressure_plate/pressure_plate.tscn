@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1ob5eaomskxb"]
+
+[ext_resource type="Script" path="res://mechanics/pressure_plate/pressure_plate.gd" id="1_guyxv"]
+[ext_resource type="Texture2D" uid="uid://clptmxjo5834y" path="res://temp_art/pressure_plate.png" id="2_7d5kk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgkl7"]
+atlas = ExtResource("2_7d5kk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx3c"]
+atlas = ExtResource("2_7d5kk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr15e"]
+atlas = ExtResource("2_7d5kk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osfd7"]
+atlas = ExtResource("2_7d5kk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blis8"]
+atlas = ExtResource("2_7d5kk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4ba8"]
+atlas = ExtResource("2_7d5kk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kh5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgkl7")
+}],
+"loop": true,
+"name": &"not_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx3c")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr15e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osfd7")
+}],
+"loop": false,
+"name": &"pressing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blis8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ba8")
+}],
+"loop": true,
+"name": &"un_pressing",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a13dh"]
+size = Vector2(16, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j7u0"]
+size = Vector2(16, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_korhc"]
+size = Vector2(48, 32)
+
+[node name="PressurePlate" type="RigidBody2D"]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_guyxv")
+enable_gravity = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8kh5s")
+animation = &"not_pressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_a13dh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_8j7u0")
+
+[node name="power_others" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="power_others"]
+visible = false
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_korhc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="power_others" to="." method="_on_power_others_body_entered"]
+[connection signal="body_exited" from="power_others" to="." method="_on_power_others_body_exited"]

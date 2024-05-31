@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbagg5o5i4b5a"]
+
+[ext_resource type="Script" path="res://mechanics/fan/fan.gd" id="1_kwkmq"]
+[ext_resource type="Texture2D" uid="uid://bkntj728hh6ov" path="res://temp_art/fan.png" id="2_qtofc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmm88"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxnwl"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6un"]
+size = Vector2(48, 16)
+
+[node name="Fan" type="RigidBody2D" groups=["can_be_powered"]]
+script = ExtResource("1_kwkmq")
+enable_gravity = false
+mechanic_type = "Fans"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qtofc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nmm88")
+
+[node name="range_left" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range_left"]
+position = Vector2(-32, 0)
+shape = SubResource("RectangleShape2D_yxnwl")
+
+[node name="range_right" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range_right"]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_gi6un")
+
+[connection signal="body_entered" from="range_left" to="." method="_on_range_left_body_entered"]
+[connection signal="body_exited" from="range_left" to="." method="_on_range_left_body_exited"]
+[connection signal="body_entered" from="range_right" to="." method="_on_range_right_body_entered"]
+[connection signal="body_exited" from="range_right" to="." method="_on_range_right_body_exited"]

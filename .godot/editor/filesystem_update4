@@ -1,9 +1,10 @@
-res://gui/mainmenu/main_menu.tscn
+res://mechanics/lever/lever.tscn
 res://levels/level1_tileset.tres
-res://hammer/hammer.tscn
-res://gui/tile_selector/tile_selector.tscn
+res://gui/mainmenu/main_menu.tscn
+res://mechanics/conveyour/converyour.tscn
 res://levels/level_1.tscn
-res://hammer/long_hammer/long_hammer_test.tscn
-res://player/player.tscn
-res://player/Player.gd
-res://hammer/hammer.gd
+res://converyour.gd
+res://mechanics/lever/lever.gd
+res://autoload/global.gd
+res://mechanics/fan/fan.tscn
+res://levels/gridsystem.gd
