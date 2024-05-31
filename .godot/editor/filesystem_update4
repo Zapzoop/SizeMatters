@@ -5,3 +5,10 @@ res://player/player.tscn
 res://levels/level_1.tscn
 res://gui/build_menu/build_menu.tscn
 res://autoload/global.gd
+res://mechanics/fan/fan.gd
+res://levels/level_1.gd
+res://mechanics/pressure_plate/pressure_plate.gd
+res://mechanics/crates/wooden/wooden_crate.gd
+res://mechanics/class_mechanics.gd
+res://mechanics/fan/fan.tscn
+res://mechanics/pressure_plate/pressure_plate.tscn

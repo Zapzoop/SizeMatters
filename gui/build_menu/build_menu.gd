@@ -31,8 +31,13 @@ var texture_path = {
 	"Right Middle Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0109.png",
 	"Left Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0127.png",
 	"Middle Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0128.png",
-	"Right Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0129.png"
+	"Right Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0129.png",
+	"Wooden Crate":"res://sprites/crate.png",
+	"Pressure Plate":"res://temp_art/pressure_plate_tex.png",
+	"Fan":"res://temp_art/fan.png"
 }
+
+
 
 func _ready():
 	Global.build_menu = self
@@ -52,6 +57,26 @@ func add_tile(received_coords):
 	texture_rec.gui_input.connect(_on_gui_input.bind(tile_name))
 	$ScrollContainer/VBoxContainer.add_child(texture_rec)
 	$ScrollContainer/VBoxContainer.move_child(placeholder,-1)
+
+func add_mechanic(mechanic_name):
+	var texture_to_load = load(texture_path[mechanic_name])
+	var texture_rec = TextureRect.new()
+	count += 1
+	inside.append(mechanic_name)
+	texture_rec.texture = texture_to_load
+	texture_rec.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
+	texture_rec.gui_input.connect(_on_gui_input_mech.bind(mechanic_name))
+	$ScrollContainer/VBoxContainer.add_child(texture_rec)
+	$ScrollContainer/VBoxContainer.move_child(placeholder,-1)
+	
+func _on_gui_input_mech(event:InputEvent,mech_name):
+	if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+				if Global.check_constraints(mech_name)==false:
+					Global.reset_build_menu()
+					return
+				Global.draw_me_mechanic(mech_name)
+				remove_child_(mech_name)
 
 func _on_gui_input(event:InputEvent,tile_name):
 	if event is InputEventMouseButton:
