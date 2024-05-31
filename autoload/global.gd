@@ -28,6 +28,7 @@ func draw_me_mechanic(string):
 	var pos = current_tilemap.tile_pos
 	var global_pos = current_tilemap.map_to_local(pos)
 	current_level.attach_mechanic(string,global_pos)
+	build_menu.remove_me()
 	current_tilemap.release()
 
 func cancel_build():
@@ -35,7 +36,7 @@ func cancel_build():
 
 func reset_build_menu():
 	current_tilemap.reset_everything()
-	#build_menu.remove_me()
+	build_menu.remove_me()
 	current_tilemap.release()
 
 func check_constraints(mech_name):

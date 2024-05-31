@@ -5,3 +5,6 @@ res://mechanics/conveyour/converyour.tscn
 res://levels/level_1.tscn
 res://converyour.gd
 res://mechanics/lever/lever.gd
+res://autoload/global.gd
+res://mechanics/fan/fan.tscn
+res://levels/gridsystem.gd

@@ -125,10 +125,10 @@ func place_block(vect:Vector2i):
 		return
 	set_cell(0,tile_pos,0,vect,0)
 	release()
-#Makes the locked to false and hides the mouse
+#Makes the locked to false and shows the mouse
 func release():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	#mouse.show()
+	mouse.show()
 	is_locked = false
 
 #Called when hammer is changed for a small amount of time can't build or destroy anything
