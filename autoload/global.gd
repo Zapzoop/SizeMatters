@@ -35,7 +35,7 @@ func cancel_build():
 
 func reset_build_menu():
 	current_tilemap.reset_everything()
-	build_menu.remove_me()
+	#build_menu.remove_me()
 	current_tilemap.release()
 
 func check_constraints(mech_name):
