@@ -1,1 +1,6 @@
+CollisionShape2D
+Area2D
+Sprite2D
+TileMap
+RigidBody2D
 Panel
