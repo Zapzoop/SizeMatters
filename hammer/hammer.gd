@@ -36,7 +36,7 @@ func change_hammer(new):
 	texture = load(textures[new])
 	offset.y = offsets[new]
 	Global.player.correct_pos(new)
-	if Global.build_menu != null:
+	if Global.build_menu.opened == true:
 		Global.reset_build_menu()
 	else:
 		Global.current_tilemap.reset_everything()

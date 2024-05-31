@@ -1,5 +1,13 @@
 extends Control
 
+@onready var placeholder = $ScrollContainer/VBoxContainer/placeholder
+@onready var anim = $AnimationPlayer
+
+var opened = false
+
+var count = -1
+var inside = []
+
 var coords = {
 	Vector2i(11,2):"Shaded Box",
 	Vector2i(7,4):"Top Left Grass",
@@ -23,29 +31,81 @@ var texture_path = {
 	"Right Middle Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0109.png",
 	"Left Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0127.png",
 	"Middle Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0128.png",
-	"Right Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0129.png"
+	"Right Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0129.png",
+	"Wooden Crate":"res://sprites/crate.png",
+	"Pressure Plate":"res://temp_art/pressure_plate_tex.png",
+	"Fan":"res://temp_art/fan.png"
 }
 
+
+
 func _ready():
-	$AnimationPlayer.play("open")
 	Global.build_menu = self
 
 func remove_me():
-	$AnimationPlayer.play("close")
+	opened = false
+	anim.play("close")
 
 func add_tile(received_coords):
 	var tile_name = coords[received_coords]
 	var texture_to_load = load(texture_path[tile_name])
 	var texture_rec = TextureRect.new()
-	texture_rec.texture = texture_rec
+	count += 1
+	inside.append(tile_name)
+	texture_rec.texture = texture_to_load
+	texture_rec.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
+	texture_rec.gui_input.connect(_on_gui_input.bind(tile_name))
+	$ScrollContainer/VBoxContainer.add_child(texture_rec)
+	$ScrollContainer/VBoxContainer.move_child(placeholder,-1)
 
+func add_mechanic(mechanic_name):
+	var texture_to_load = load(texture_path[mechanic_name])
+	var texture_rec = TextureRect.new()
+	count += 1
+	inside.append(mechanic_name)
+	texture_rec.texture = texture_to_load
+	texture_rec.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
+	texture_rec.gui_input.connect(_on_gui_input_mech.bind(mechanic_name))
+	$ScrollContainer/VBoxContainer.add_child(texture_rec)
+	$ScrollContainer/VBoxContainer.move_child(placeholder,-1)
+	
+func _on_gui_input_mech(event:InputEvent,mech_name):
+	if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+				if Global.check_constraints(mech_name)==false:
+					Global.reset_build_menu()
+					return
+				Global.draw_me_mechanic(mech_name)
+				remove_child_(mech_name)
+
+func _on_gui_input(event:InputEvent,tile_name):
+	if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+				Global.draw_me(tile_name)
+				remove_child_(tile_name)
+
+func remove_child_(tile_name):
+	var index = index_finder(tile_name)
+	var child = $ScrollContainer/VBoxContainer.get_child(index)
+	child.queue_free()
+	count -= 1
+	inside.remove_at(index)
+
+func index_finder(tile_name):
+	for i in range(inside.size()):
+		if inside[i] == tile_name:
+			return i
+	return -1
+	
 func _input(event):
 	if Input.is_action_pressed("escape"):
 		_on_cancel_pressed()
 
 func _on_cancel_pressed():
 	Global.cancel_build()
-	self.queue_free()
+	opened = false
+	anim.play("close")
+	#self.queue_free()
 
 func _on_obj_8_gui_input(event):
 	if event is InputEventMouseButton:

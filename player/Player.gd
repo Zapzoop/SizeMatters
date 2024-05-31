@@ -25,7 +25,6 @@ func _ready():
 func _process(delta):
 	current_hammer = $Marker2D/Hand/Marker2D/hammer.current
 
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor() and grabbed == false:

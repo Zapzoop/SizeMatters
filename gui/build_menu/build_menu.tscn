@@ -29,6 +29,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1152, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cancel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7fug2"]
 resource_name = "close"
@@ -55,6 +67,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(0.241484, 1),
 "update": 0,
 "values": [Vector2(1016, 0), Vector2(1152, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cancel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_5q6c8"]
@@ -83,6 +107,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1152, 0), Vector2(1016, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cancel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j8xii"]
 _data = {
@@ -98,9 +134,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ue7tw")
 
 [node name="Cancel" type="Button" parent="."]
+visible = false
 layout_mode = 0
 anchor_right = 0.0894097
 anchor_bottom = 0.0478395

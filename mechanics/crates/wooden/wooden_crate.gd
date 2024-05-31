@@ -11,3 +11,4 @@ func _input(event):
 	if Input.is_action_pressed("click") and Global.player.current_hammer == 2:
 		if tilemap.tile_pos ==  tilemap.local_to_map(get_global_position()):
 			self.queue_free()
+			Global.build_menu.add_mechanic("Wooden Crate")
