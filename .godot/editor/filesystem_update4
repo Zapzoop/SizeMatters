@@ -1,10 +1,7 @@
-res://converyour.gd
-res://mechanics/conveyour/converyour.tscn
+res://mechanics/lever/lever.tscn
 res://levels/level1_tileset.tres
 res://gui/mainmenu/main_menu.tscn
-res://player/player.tscn
+res://mechanics/conveyour/converyour.tscn
 res://levels/level_1.tscn
-res://gui/build_menu/build_menu.tscn
-res://mechanics/fan/fan.tscn
-res://mechanics/pressure_plate/pressure_plate.tscn
-res://mechanics/crates/wooden/wooden_crate.tscn
+res://converyour.gd
+res://mechanics/lever/lever.gd

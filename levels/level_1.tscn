@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://drjsuntdb1f2p"]
+[gd_scene load_steps=13 format=3 uid="uid://drjsuntdb1f2p"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_fegh1"]
 [ext_resource type="TileSet" uid="uid://bcmdlu6no37cx" path="res://levels/level1_tileset.tres" id="2_2oaeq"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b1ob5eaomskxb" path="res://mechanics/pressure_plate/pressure_plate.tscn" id="9_xdqcr"]
 [ext_resource type="PackedScene" uid="uid://cua6v200ry3pg" path="res://mechanics/conveyour/converyour.tscn" id="11_bq1yk"]
 [ext_resource type="PackedScene" uid="uid://blnlwl2figcgv" path="res://mechanics/lever/lever.tscn" id="12_eir7s"]
-[ext_resource type="Script" path="res://mechanics/lever/lever.gd" id="13_5qda1"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_fegh1")
@@ -72,18 +71,28 @@ position = Vector2(360, 40)
 position = Vector2(280, 40)
 
 [node name="converyour" parent="." instance=ExtResource("11_bq1yk")]
-position = Vector2(192, 48)
+position = Vector2(32, 48)
 mass = 1000.0
 direction = "left"
 enable_gravity = false
 
 [node name="lever" parent="." node_paths=PackedStringArray("connected_to", "player") instance=ExtResource("12_eir7s")]
 position = Vector2(136, 48)
-script = ExtResource("13_5qda1")
-connected_to = NodePath("../converyour")
+connected_to = [NodePath("../converyour"), NodePath("../converyour2"), NodePath("../converyour3"), NodePath("../converyour4")]
 player = NodePath("../Player")
 
 [node name="converyour2" parent="." instance=ExtResource("11_bq1yk")]
-position = Vector2(176, 48)
+position = Vector2(16, 48)
 mass = 1000.0
-power = true
+direction = "left"
+enable_gravity = false
+
+[node name="converyour3" parent="." instance=ExtResource("11_bq1yk")]
+position = Vector2(0, 48)
+direction = "left"
+enable_gravity = false
+
+[node name="converyour4" parent="." instance=ExtResource("11_bq1yk")]
+position = Vector2(-16, 48)
+direction = "left"
+enable_gravity = false
