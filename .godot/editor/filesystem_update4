@@ -10,4 +10,7 @@ res://mouse/mouse.tscn
 res://mechanics/pressure_plate/pressure_plate.tscn
 res://mechanics/crates/wooden/wooden_crate.tscn
 res://level 2/node_2d.tscn
-res://mechanics/fan/fan.gd
+res://mechanics/vertical_door/vertical_door.tscn
+res://mechanics/pressure_plate/pressure_plate.gd
+res://levels/level_1.gd
+res://level 2/music.gd

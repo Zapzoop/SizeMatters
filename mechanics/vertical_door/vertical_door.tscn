@@ -159,13 +159,10 @@ _data = {
 script = ExtResource("1_1ssf0")
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2(-40, -7)
-rotation = -1.5708
+position = Vector2(0, -40.0625)
 shape = SubResource("RectangleShape2D_dfe0b")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -7)
-rotation = -1.5708
 scale = Vector2(0.111221, 0.610649)
 texture = ExtResource("1_hotn7")
 offset = Vector2(0, -64)
