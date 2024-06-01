@@ -1,21 +1,14 @@
-<<<<<<< HEAD
+ColorRect
+CanvasModulate
 Button
 Label
-=======
-<<<<<<< HEAD
+Sprite2D
 AudioStreamPlayer2D
 CollisionShape2D
 Area2D
 AnimatedSprite2D
-=======
 TextureRect
 Camera2D
 CharacterBody2D
 CanvasLayer
 Node
->>>>>>> main
-Sprite2D
-ParallaxLayer
-ParallaxBackground
->>>>>>> main
-ColorRect

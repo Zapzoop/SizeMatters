@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://csqjmr367idmx"]
+[gd_scene load_steps=18 format=3 uid="uid://csqjmr367idmx"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_2trpb"]
 [ext_resource type="TileSet" uid="uid://bcmdlu6no37cx" path="res://levels/level1_tileset.tres" id="1_cjb04"]
 [ext_resource type="PackedScene" uid="uid://cn1bxi51sflmh" path="res://player/player.tscn" id="2_c7s60"]
+[ext_resource type="Texture2D" uid="uid://ckmtprw7hn457" path="res://2 Background/1.png" id="2_wwtri"]
 [ext_resource type="Script" path="res://levels/gridsystem.gd" id="3_imnbm"]
 [ext_resource type="PackedScene" uid="uid://bkmbpt46uu7c3" path="res://gui/build_menu/build_menu.tscn" id="3_tvjk8"]
 [ext_resource type="PackedScene" uid="uid://c8wmmovvl4ihe" path="res://mouse/mouse.tscn" id="6_lm3se"]
+[ext_resource type="PackedScene" uid="uid://dgb2k6rwyd60b" path="res://pause.tscn" id="7_guyes"]
 [ext_resource type="PackedScene" uid="uid://bbagg5o5i4b5a" path="res://mechanics/fan/fan.tscn" id="7_gxufp"]
 [ext_resource type="PackedScene" uid="uid://dqoj4ebhos4n7" path="res://mechanics/crates/wooden/wooden_crate.tscn" id="8_yi601"]
 [ext_resource type="PackedScene" uid="uid://dysgyo718qmes" path="res://mechanics/vertical_door/vertical_door.tscn" id="9_cf1dm"]
@@ -21,6 +23,12 @@ size = Vector2(4, 30)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2trpb")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(184, 576)
+texture = ExtResource("2_wwtri")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 1000)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_cjb04")
 format = 2
@@ -31,25 +39,22 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("3_imnbm")
 
 [node name="Player" parent="." instance=ExtResource("2_c7s60")]
-position = Vector2(269, 396)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 182.0
-offset_bottom = 118.0
-text = "Level 1"
-metadata/_edit_use_anchors_ = true
-
-[node name="build_menu" parent="CanvasLayer" instance=ExtResource("3_tvjk8")]
-visible = false
+position = Vector2(87, 632)
 
 [node name="Mouse" parent="." instance=ExtResource("6_lm3se")]
+process_mode = 3
 z_index = 3
 scale = Vector2(0.6, 0.6)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="build_menu" parent="CanvasLayer" instance=ExtResource("3_tvjk8")]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("7_guyes")]
+visible = false
+
 [node name="WoodenCrate" parent="." instance=ExtResource("8_yi601")]
-position = Vector2(163, 560)
+position = Vector2(152, 568)
 
 [node name="Fan" parent="." instance=ExtResource("7_gxufp")]
 position = Vector2(184, 584)

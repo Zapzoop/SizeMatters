@@ -17,7 +17,8 @@ var craftable_coords = {
 	"Right Middle Grass":Vector2i(9,5),
 	"Left Bottom Grass":Vector2i(7,6),
 	"Middle Bottom Grass":Vector2i(8,6),
-	"Right Bottom Grass":Vector2i(9,6)
+	"Right Bottom Grass":Vector2i(9,6),
+	"BOX":Vector2i(8,3)
 	}
 
 func draw_me(string):

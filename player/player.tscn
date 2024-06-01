@@ -88,7 +88,7 @@ rotation = -3.14159
 offset = Vector2(0, -5)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -4)
 target_position = Vector2(0, 3.2)
 collision_mask = 17
 
