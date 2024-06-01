@@ -18,7 +18,8 @@ var coords = {
 	Vector2i(9,5):"Right Middle Grass",
 	Vector2i(7,6):"Left Bottom Grass",
 	Vector2i(8,6):"Middle Bottom Grass",
-	Vector2i(9,6):"Right Bottom Grass"
+	Vector2i(9,6):"Right Bottom Grass",
+	Vector2i(8,3):"BOX"
 }
 
 var texture_path = {
@@ -32,9 +33,11 @@ var texture_path = {
 	"Left Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0127.png",
 	"Middle Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0128.png",
 	"Right Bottom Grass":"res://kenney_1-bit-platformer-pack/Tiles/Transparent/tile_0129.png",
-	"Wooden Crate":"res://sprites/crate.png",
-	"Pressure Plate":"res://temp_art/pressure_plate_tex.png",
-	"Fan":"res://temp_art/fan.png"
+	"Wooden Crate":"res://temp_art/button/wooden.png",
+	"Pressure Plate":"res://sprites/single/button-single.png",
+	"Fan":"res://sprites/single/fan-build.png",
+	"BOX":"res://sprites/box.png",
+	"Lever":"res://sprites/single/lever_build.png"
 }
 
 
@@ -44,7 +47,7 @@ func _ready():
 
 func remove_me():
 	opened = false
-	anim.play("close")
+	anim.play_backwards("open")
 
 func add_tile(received_coords):
 	var tile_name = coords[received_coords]
@@ -105,7 +108,7 @@ func _input(event):
 func _on_cancel_pressed():
 	Global.cancel_build()
 	opened = false
-	anim.play("close")
+	anim.play_backwards("open")
 	#self.queue_free()
 
 func _on_obj_8_gui_input(event):

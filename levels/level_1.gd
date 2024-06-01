@@ -34,4 +34,4 @@ func attach_mechanic(string,global_pos):
 
 
 func _on_end_body_entered(body):
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://end/end.tscn")

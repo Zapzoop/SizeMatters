@@ -10,14 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Godot Jam Game 2024"
+config/name="Hammers"
 run/main_scene="res://gui/mainmenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon_app.png"
 
 [autoload]
 
 Global="*res://autoload/global.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor]
 
