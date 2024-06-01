@@ -1,14 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717271737
+::res://::1717272668
 converyour.gd::GDScript::-1::1717266785::0::1::::<>Mechanics<>::
 enemy.gd::GDScript::-1::1717266785::0::1::::<>Sprite2D<>::
 factory_.png::CompressedTexture2D::7245470432469014197::1717266997::1717266816::1::::<><>::
 icon.svg::CompressedTexture2D::3353208912542161862::1717266785::1717266785::1::::<><>::
+music.gd::GDScript::-1::1717272530::0::1::::<>AudioStreamPlayer2D<>::
 README.md::TextFile::-1::1717266785::0::1::::<><>::
-music.gd::GDScript::-1::1717271537::0::1::::<>AudioStreamPlayer2D<>::
 test.tscn::PackedScene::712168158584631384::1717266787::0::1::::<><>::uid://blnlwl2figcgv::::res://mechanics/vertical_door/lever.tscn<>uid://dysgyo718qmes::::res://mechanics/vertical_door/vertical_door.tscn
-::res://audio/::1717271796
-grimes_full.wav::AudioStreamWAV::8249156161252886404::1717271723::1717271800::1::::<><>::
+::res://audio/::1717272530
+grimes_full.wav::AudioStreamWAV::8249156161252886404::1717272529::1717272529::1::::<><>::
+music.tscn::PackedScene::9187797180758088730::1717272530::0::1::::<><>::uid://dpr7nqwhnb2oe::::res://audio/grimes_full.wav<>res://music.gd
 ::res://autoload/::1717266785
 global.gd::GDScript::-1::1717266785::0::1::::<>Node<>::
 ::res://enemies/::1717266785
@@ -846,11 +847,11 @@ tile_0396.png::CompressedTexture2D::8531603520250266660::1717266787::1717266787:
 tile_0397.png::CompressedTexture2D::6811968540211596511::1717266787::1717266787::1::::<><>::
 tile_0398.png::CompressedTexture2D::8500743616731524003::1717266787::1717266787::1::::<><>::
 tile_0399.png::CompressedTexture2D::6539241919534211142::1717266787::1717266787::1::::<><>::
-::res://level 2/::1717271097
-node_2d.tscn::PackedScene::6069839417000553691::1717271097::0::1::::<><>::res://levels/level_1.gd<>uid://bcmdlu6no37cx::::res://levels/level1_tileset.tres<>uid://cn1bxi51sflmh::::res://player/player.tscn<>res://levels/gridsystem.gd<>uid://bkmbpt46uu7c3::::res://gui/build_menu/build_menu.tscn<>uid://c8wmmovvl4ihe::::res://mouse/mouse.tscn<>uid://bbagg5o5i4b5a::::res://mechanics/fan/fan.tscn<>uid://dqoj4ebhos4n7::::res://mechanics/crates/wooden/wooden_crate.tscn<>uid://b1ob5eaomskxb::::res://mechanics/pressure_plate/pressure_plate.tscn
-::res://levels/::1717271096
+::res://level 2/::1717272544
+node_2d.tscn::PackedScene::6069839417000553691::1717272544::0::1::::<><>::res://levels/level_1.gd<>uid://bcmdlu6no37cx::::res://levels/level1_tileset.tres<>uid://cn1bxi51sflmh::::res://player/player.tscn<>res://levels/gridsystem.gd<>uid://bkmbpt46uu7c3::::res://gui/build_menu/build_menu.tscn<>uid://c8wmmovvl4ihe::::res://mouse/mouse.tscn<>uid://bbagg5o5i4b5a::::res://mechanics/fan/fan.tscn<>uid://dqoj4ebhos4n7::::res://mechanics/crates/wooden/wooden_crate.tscn<>uid://b1ob5eaomskxb::::res://mechanics/pressure_plate/pressure_plate.tscn
+::res://levels/::1717272544
 gridsystem.gd::GDScript::-1::1717266787::0::1::::<>TileMap<>::
-level1_tileset.tres::TileSet::2551773797695582971::1717271023::0::1::::<><>::uid://dbh03snuj7hf6::::res://factory_.png<>uid://ch0xhn883ck0w::::res://gui/tile_selector/tile_selector.tscn
+level1_tileset.tres::TileSet::2551773797695582971::1717272544::0::1::::<><>::uid://dbh03snuj7hf6::::res://factory_.png<>uid://ch0xhn883ck0w::::res://gui/tile_selector/tile_selector.tscn
 level_1.gd::GDScript::-1::1717266787::0::1::::<>Node2D<>::
 level_1.tscn::PackedScene::8372181126753792953::1717271096::0::1::::<><>::res://levels/level_1.gd<>uid://bcmdlu6no37cx::::res://levels/level1_tileset.tres<>uid://cn1bxi51sflmh::::res://player/player.tscn<>res://levels/gridsystem.gd<>uid://c8wmmovvl4ihe::::res://mouse/mouse.tscn<>uid://d2n4c0wie4dme::::res://enemies/mole/mole.tscn<>uid://bkmbpt46uu7c3::::res://gui/build_menu/build_menu.tscn<>uid://dqoj4ebhos4n7::::res://mechanics/crates/wooden/wooden_crate.tscn<>uid://bbagg5o5i4b5a::::res://mechanics/fan/fan.tscn<>uid://b1ob5eaomskxb::::res://mechanics/pressure_plate/pressure_plate.tscn<>uid://cua6v200ry3pg::::res://mechanics/conveyour/converyour.tscn<>uid://blnlwl2figcgv::::res://mechanics/lever/lever.tscn
 ::res://mechanics/::1717266787
@@ -863,8 +864,8 @@ class_crate.gd::GDScript::-1::1717266787::0::1::::Crate<>Mechanics<>::
 ::res://mechanics/crates/wooden/::1717271096
 wooden_crate.gd::GDScript::-1::1717266787::0::1::::<>Crate<>::
 wooden_crate.tscn::PackedScene::8311783290778501470::1717271096::0::1::::<><>::res://mechanics/crates/wooden/wooden_crate.gd<>uid://ctdd57hhi3ytf::::res://temp_art/button/wooden.png
-::res://mechanics/fan/::1717271096
-fan.gd::GDScript::-1::1717266787::0::1::::<>Mechanics<>::
+::res://mechanics/fan/::1717272544
+fan.gd::GDScript::-1::1717272544::0::1::::<>Mechanics<>::
 fan.tscn::PackedScene::2456986142753823144::1717271096::0::1::::<><>::res://mechanics/fan/fan.gd<>uid://csv1c721e43px::::res://temp_art/button/fan.png
 ::res://mechanics/lever/::1717271096
 lever.gd::GDScript::-1::1717266787::0::1::::<>Mechanics<>::
@@ -881,9 +882,9 @@ vertical_door.tscn::PackedScene::8881361044962178970::1717266787::0::1::::<><>::
 ::res://mouse/::1717271096
 mouse.gd::GDScript::-1::1717266787::0::1::::<>AnimatedSprite2D<>::
 mouse.tscn::PackedScene::7135240320208429834::1717271096::0::1::::<><>::uid://drhpw7knipik1::::res://temp_art/click-mouse.png<>uid://dk0um6bag118d::::res://temp_art/default-mouse.png<>res://mouse/mouse.gd
-::res://player/::1717271096
+::res://player/::1717272544
 Player.gd::GDScript::-1::1717266787::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::5739072414275274707::1717271096::0::1::::<><>::res://player/Player.gd<>uid://daxa7qkjmfopv::::res://temp_art/player.png<>uid://bg0dl3wcrhpxi::::res://temp_art/jump.png<>uid://d018xkjy1ffiq::::res://temp_art/Sprite-0002-Sheet.png<>uid://d8xoef6k337g::::res://temp_art/hand.png<>uid://4vfk37ghtjty::::res://hammer/hammer.tscn
+player.tscn::PackedScene::5739072414275274707::1717272544::0::1::::<><>::res://player/Player.gd<>uid://daxa7qkjmfopv::::res://temp_art/player.png<>uid://bg0dl3wcrhpxi::::res://temp_art/jump.png<>uid://d018xkjy1ffiq::::res://temp_art/Sprite-0002-Sheet.png<>uid://d8xoef6k337g::::res://temp_art/hand.png<>uid://4vfk37ghtjty::::res://hammer/hammer.tscn
 ::res://sprites/::1717266787
 big_hammer.png::CompressedTexture2D::3150053990257602906::1717266787::1717266787::1::::<><>::
 crate.png::CompressedTexture2D::1889845652776734524::1717266787::1717266787::1::::<><>::
