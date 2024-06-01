@@ -52,7 +52,7 @@ func _on_area_2d_body_exited(body):
 			is_pressed = false
 			power = false
 			body_pressing = null
-			$AnimatedSprite2D.play("un_pressing")
+			$AnimatedSprite2D.play_backwards("pressing")
 			$AnimatedSprite2D.play("not_pressed")
 
 func _on_power_others_body_entered(body):

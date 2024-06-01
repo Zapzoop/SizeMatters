@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqoj4ebhos4n7"]
 
 [ext_resource type="Script" path="res://mechanics/crates/wooden/wooden_crate.gd" id="1_lc3ke"]
-[ext_resource type="Texture2D" uid="uid://16pqm7ldig7u" path="res://sprites/crate.png" id="2_wolt7"]
+[ext_resource type="Texture2D" uid="uid://ctdd57hhi3ytf" path="res://temp_art/button/wooden.png" id="2_ygipp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kitjo"]
 rough = true
@@ -17,8 +17,7 @@ script = ExtResource("1_lc3ke")
 mechanic_type = "Crates"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_wolt7")
+texture = ExtResource("2_ygipp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3i8ps")

@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var current = 1 #0=long 1=normal 2=big
-var textures = ["res://sprites/long_hammer.png","res://sprites/small_hammer.png","res://sprites/big_hammer.png"]
+var textures = ["res://temp_art/long.png","res://temp_art/hammer.png","res://temp_art/big.png"]
 var offsets = [-16,-5,-12]
 
 var fixed_pos = Vector2()

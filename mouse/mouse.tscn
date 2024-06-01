@@ -1,14 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8wmmovvl4ihe"]
+[gd_scene load_steps=7 format=3 uid="uid://c8wmmovvl4ihe"]
 
-[ext_resource type="Texture2D" uid="uid://7fex34n1lgm6" path="res://sprites/mouse_hammer_click.png" id="1_0dcxn"]
-[ext_resource type="Texture2D" uid="uid://d4fftyql3oc8u" path="res://sprites/mouse_hammer.png" id="2_c6hpv"]
+[ext_resource type="Texture2D" uid="uid://drhpw7knipik1" path="res://temp_art/click-mouse.png" id="1_8ou1k"]
+[ext_resource type="Texture2D" uid="uid://dk0um6bag118d" path="res://temp_art/default-mouse.png" id="2_stb1f"]
 [ext_resource type="Script" path="res://mouse/mouse.gd" id="3_wqaqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji3sc"]
+atlas = ExtResource("1_8ou1k")
+region = Rect2(0, 0, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ykg6"]
+atlas = ExtResource("2_stb1f")
+region = Rect2(0, 0, 9, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_head2"]
 animations = [{
 "frames": [{
-"duration": 30.0,
-"texture": ExtResource("1_0dcxn")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji3sc")
 }],
 "loop": true,
 "name": &"click",
@@ -16,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_c6hpv")
+"texture": SubResource("AtlasTexture_5ykg6")
 }],
 "loop": true,
 "name": &"default",
@@ -25,7 +33,5 @@ animations = [{
 
 [node name="Mouse" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_head2")
-animation = &"click"
-frame_progress = 0.0211241
 offset = Vector2(5, 9)
 script = ExtResource("3_wqaqh")
