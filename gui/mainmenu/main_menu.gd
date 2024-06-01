@@ -9,3 +9,4 @@ func _on_start_button_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+	%sfx.button()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbagg5o5i4b5a"]
+[gd_scene load_steps=12 format=3 uid="uid://bbagg5o5i4b5a"]
 
 [ext_resource type="Script" path="res://mechanics/fan/fan.gd" id="1_kwkmq"]
 [ext_resource type="Texture2D" uid="uid://csv1c721e43px" path="res://temp_art/button/fan.png" id="2_fqc5u"]
+[ext_resource type="AudioStream" uid="uid://cdo3rcu1ftu70" path="res://audio/fan_power_on.wav" id="3_g4ye4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icdb4"]
 atlas = ExtResource("2_fqc5u")
@@ -55,6 +56,7 @@ size = Vector2(48, 16)
 
 [node name="Fan" type="RigidBody2D" groups=["can_be_powered"]]
 script = ExtResource("1_kwkmq")
+power = true
 enable_gravity = false
 mechanic_type = "Fans"
 
@@ -79,6 +81,9 @@ shape = SubResource("RectangleShape2D_yxnwl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range_right"]
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_gi6un")
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g4ye4")
 
 [connection signal="body_entered" from="range_left" to="." method="_on_range_left_body_entered"]
 [connection signal="body_exited" from="range_left" to="." method="_on_range_left_body_exited"]

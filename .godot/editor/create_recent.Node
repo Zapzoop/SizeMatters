@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+AudioStreamPlayer2D
+=======
 ColorRect
 CanvasModulate
 Button
@@ -7,6 +10,7 @@ AudioStreamPlayer2D
 CollisionShape2D
 Area2D
 AnimatedSprite2D
+>>>>>>> end
 TextureRect
 Camera2D
 CharacterBody2D
