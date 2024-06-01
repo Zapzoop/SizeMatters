@@ -19,6 +19,7 @@ var in_range = []
 func _ready():
 	basic_setup()
 	tilemap = Global.current_tilemap
+	check()
 
 func check():
 	self_pos = self.get_global_position()
@@ -61,6 +62,7 @@ func _input(event):
 
 func _physics_process(delta):
 	if power:
+		print(direction)
 		$Sprite2D.play("start")
 		for i in in_range:
 			if direction == "left":

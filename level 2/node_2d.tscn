@@ -23,7 +23,7 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("3_imnbm")
 
 [node name="Player" parent="." instance=ExtResource("2_c7s60")]
-position = Vector2(84, 635)
+position = Vector2(200, 560)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
