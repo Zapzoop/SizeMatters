@@ -10,4 +10,3 @@ res://mouse/mouse.tscn
 res://mechanics/pressure_plate/pressure_plate.tscn
 res://mechanics/crates/wooden/wooden_crate.tscn
 res://level 2/node_2d.tscn
-res://levels/gridsystem.gd
