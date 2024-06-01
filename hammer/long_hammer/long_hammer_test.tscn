@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://qdon4h6ytf2o"]
 
 [ext_resource type="Script" path="res://hammer/long_hammer/long_hammer_test.gd" id="1_xyqst"]
-[ext_resource type="TileSet" uid="uid://bcmdlu6no37cx" path="res://levels/level1_tileset.tres" id="2_uqx46"]
-[ext_resource type="Script" path="res://levels/gridsystem.gd" id="3_jxejg"]
+[ext_resource type="TileSet" uid="uid://bcmdlu6no37cx" path="res://level 2/level1_tileset.tres" id="2_uqx46"]
+[ext_resource type="Script" path="res://level 2/gridsystem.gd" id="3_jxejg"]
 [ext_resource type="PackedScene" uid="uid://cn1bxi51sflmh" path="res://player/player.tscn" id="4_riwfw"]
 [ext_resource type="PackedScene" uid="uid://c8wmmovvl4ihe" path="res://mouse/mouse.tscn" id="5_ym1i1"]
 
