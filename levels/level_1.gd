@@ -31,3 +31,7 @@ func attach_mechanic(string,global_pos):
 			var ins = to_load.instantiate()
 			ins.global_position = global_pos
 			self.add_child(ins)
+
+
+func _on_end_body_entered(body):
+	get_tree().change_scene_to_file("res://end/end.tscn")

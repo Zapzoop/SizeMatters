@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(8, -32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -209,12 +209,14 @@ _data = {
 
 [node name="vertical_door" type="RigidBody2D"]
 script = ExtResource("1_1ssf0")
+metadata/_edit_horizontal_guides_ = [-112.0]
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_orsww")
 offset = Vector2(8, -32)
 
 [node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(8, -32)
 shape = SubResource("RectangleShape2D_dfe0b")
 
 [node name="anim" type="AnimationPlayer" parent="."]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d35vxa4gjflje"]
+
+[ext_resource type="AudioStream" uid="uid://dpr7nqwhnb2oe" path="res://audio/grimes_full.wav" id="1_y0431"]
+[ext_resource type="Script" path="res://music.gd" id="2_xkuln"]
+
+[node name="music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_y0431")
+script = ExtResource("2_xkuln")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://e7flqfan73eo"]
+
+[ext_resource type="Script" path="res://end.gd" id="1_jysy2"]
+[ext_resource type="FontFile" uid="uid://4b365ipfvm3p" path="res://font/monogram-extended.ttf" id="2_4kbgv"]
+[ext_resource type="Theme" uid="uid://vx7ps63mg72k" path="res://gui/mainmenu/ui.tres" id="3_0ox6h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jysy2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.129412, 0.243137, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.313368
+anchor_top = 0.0509259
+anchor_right = 0.653646
+anchor_bottom = 0.234568
+theme_override_fonts/font = ExtResource("2_4kbgv")
+theme_override_font_sizes/font_size = 150
+text = "THE END"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.41059
+anchor_top = 0.234568
+anchor_right = 0.592014
+anchor_bottom = 0.271605
+offset_bottom = 1.52588e-05
+theme_override_fonts/font = ExtResource("2_4kbgv")
+theme_override_font_sizes/font_size = 29
+text = "Thanks for Playing!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.392361
+anchor_top = 0.638889
+anchor_right = 0.571181
+anchor_bottom = 0.683642
+theme = ExtResource("3_0ox6h")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

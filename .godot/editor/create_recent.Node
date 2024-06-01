@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 AudioStreamPlayer2D
+=======
+ColorRect
+CanvasModulate
+Button
+Label
+Sprite2D
+AudioStreamPlayer2D
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+>>>>>>> end
 TextureRect
 Camera2D
 CharacterBody2D
 CanvasLayer
 Node
-Sprite2D
-ParallaxLayer
-ParallaxBackground
-ColorRect
-Panel
