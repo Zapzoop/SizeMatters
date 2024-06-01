@@ -19,7 +19,6 @@ var in_range = []
 func _ready():
 	basic_setup()
 	tilemap = Global.current_tilemap
-	check()
 
 func check():
 	self_pos = self.get_global_position()
