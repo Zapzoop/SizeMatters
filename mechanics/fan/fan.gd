@@ -62,6 +62,7 @@ func _input(event):
 
 func _physics_process(delta):
 	if power:
+		print(direction)
 		$Sprite2D.play("start")
 		for i in in_range:
 			if direction == "left":

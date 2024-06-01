@@ -1,4 +1,21 @@
 res://gui/mainmenu/main_menu.tscn
+<<<<<<< HEAD
+res://levels/level1_tileset.tres
+res://mechanics/conveyour/converyour.tscn
+res://levels/level_1.tscn
+res://mechanics/lever/lever.tscn
+res://mechanics/fan/fan.tscn
+res://player/player.tscn
+res://hammer/hammer.tscn
+res://mouse/mouse.tscn
+res://mechanics/pressure_plate/pressure_plate.tscn
+res://mechanics/crates/wooden/wooden_crate.tscn
+res://level 2/node_2d.tscn
+res://mechanics/vertical_door/vertical_door.tscn
+res://mechanics/pressure_plate/pressure_plate.gd
+res://levels/level_1.gd
+res://level 2/music.gd
+=======
 res://gui/mainmenu/resource/boxhighlight.tres
 res://gui/mainmenu/ui.tres
 res://gui/build_menu/build_menu.tscn
@@ -10,3 +27,4 @@ res://2 Background/scrolling.gd
 res://gui/mainmenu/main_menu.gd
 res://mechanics/vertical_door/vertical_door.tscn
 res://mechanics/vertical_door/vertical_door.gd
+>>>>>>> main

@@ -76,7 +76,7 @@ func _process(delta):
 								return
 							erase_cell(1,previous_tile_pos)
 							set_cell(1,tile_pos,2,Vector2i(0,0),1)
-							can_grab_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("destructable")
+							can_grab_current_block = get_cell_tile_data(0,tile_pos).get_custom_data("can_attach")
 						elif get_cell_tile_data(0,tile_pos) == null:
 							erase_cell(1,previous_tile_pos)
 							can_grab_current_block = false
