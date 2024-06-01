@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://blnlwl2figcgv"]
+[gd_scene load_steps=12 format=3 uid="uid://blnlwl2figcgv"]
 
 [ext_resource type="Script" path="res://mechanics/lever/lever.gd" id="1_aeqvo"]
 [ext_resource type="Texture2D" uid="uid://co671di3c5m7g" path="res://temp_art/button/lever.png" id="2_f0h8n"]
+[ext_resource type="AudioStream" uid="uid://b8etta5lant48" path="res://audio/lever_pulled.wav" id="3_b2vau"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svl6f"]
 atlas = ExtResource("2_f0h8n")
@@ -90,3 +91,6 @@ offset_right = 14.0
 offset_bottom = -17.0
 theme_override_font_sizes/font_size = 14
 text = "x"
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_b2vau")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0m8n1834jjyn"]
+[gd_scene load_steps=12 format=3 uid="uid://c0m8n1834jjyn"]
 
 [ext_resource type="Script" path="res://gui/mainmenu/main_menu.gd" id="1_6bgle"]
 [ext_resource type="Theme" uid="uid://vx7ps63mg72k" path="res://gui/mainmenu/ui.tres" id="2_ce837"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dpu3isjarniw2" path="res://2 Background/4.png" id="5_el013"]
 [ext_resource type="Texture2D" uid="uid://dg82b4htcp68s" path="res://2 Background/5.png" id="6_qduj5"]
 [ext_resource type="Script" path="res://2 Background/scrolling.gd" id="10_233xg"]
+[ext_resource type="Script" path="res://gui/mainmenu/sfx.gd" id="11_kkepy"]
 
 [node name="Node" type="Node"]
 
@@ -119,5 +120,10 @@ centered = false
 position = Vector2(576, 324)
 script = ExtResource("10_233xg")
 
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_kkepy")
+
+[connection signal="mouse_entered" from="CanvasLayer/MainMenu/VBoxContainer" to="sfx" method="_on_v_box_container_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/VBoxContainer/StartButton" to="CanvasLayer/MainMenu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/VBoxContainer/quit" to="CanvasLayer/MainMenu" method="_on_quit_pressed"]

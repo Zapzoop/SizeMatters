@@ -30,6 +30,7 @@ func _process(delta):
 					i.power = false
 		elif Input.is_action_just_pressed("activate_lever") and power == true:
 			power = false
+			$audio.play()
 			$Sprite2D.play_backwards("start")
 			$Sprite2D.play("default")
 			for i in connected_to:

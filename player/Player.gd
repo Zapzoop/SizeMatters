@@ -34,6 +34,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		if grabbed == false:
 			velocity.y = JUMP_VELOCITY
+			$audio.play()
 		else:
 			velocity.y = -SPEED
 	

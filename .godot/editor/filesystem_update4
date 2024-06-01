@@ -1,12 +1,15 @@
+res://gui/mainmenu/sfx.gd
 res://gui/mainmenu/main_menu.tscn
 res://gui/mainmenu/resource/boxhighlight.tres
 res://gui/mainmenu/ui.tres
-res://gui/build_menu/build_menu.tscn
-res://gui/build_menu/build_menu.gd
 res://levels/level1_tileset.tres
+res://mechanics/fan/fan.tscn
+res://mechanics/fan/fan.gd
+res://gui/build_menu/build_menu.tscn
 res://levels/level_1.tscn
-res://gui/mainmenu/scrolling.gd
-res://2 Background/scrolling.gd
-res://gui/mainmenu/main_menu.gd
 res://mechanics/vertical_door/vertical_door.tscn
-res://mechanics/vertical_door/vertical_door.gd
+res://mechanics/lever/lever.tscn
+res://mechanics/lever/lever.gd
+res://player/player.tscn
+res://player/Player.gd
+res://gui/mainmenu/main_menu.gd
