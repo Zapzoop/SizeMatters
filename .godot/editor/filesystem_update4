@@ -1,36 +1,6 @@
-<<<<<<< HEAD
-res://gui/mainmenu/sfx.gd
 res://gui/mainmenu/main_menu.tscn
-res://gui/mainmenu/resource/boxhighlight.tres
-res://gui/mainmenu/ui.tres
-res://levels/level1_tileset.tres
-res://mechanics/fan/fan.tscn
-res://mechanics/fan/fan.gd
-res://gui/build_menu/build_menu.tscn
-res://levels/level_1.tscn
-res://mechanics/vertical_door/vertical_door.tscn
-res://mechanics/lever/lever.tscn
-res://mechanics/lever/lever.gd
-res://player/player.tscn
-res://player/Player.gd
-res://gui/mainmenu/main_menu.gd
-=======
-res://mechanics/vertical_door/vertical_door.tscn
 res://gui/mainmenu/ui.tres
 res://mechanics/pressure_plate/pressure_plate.gd
-res://levels/level1_tileset.tres
-res://gui/mainmenu/main_menu.tscn
-res://level 2/node_2d.tscn
-res://levels/level_1.gd
-res://player/Player.gd
-res://player/player.tscn
-res://mechanics/lever/lever.tscn
-res://gui/build_menu/build_menu.gd
-res://autoload/global.gd
-res://gui/mainmenu/main_menu.gd
 res://gui/build_menu/build_menu.tscn
-res://mechanics/fan/fan.tscn
-res://mechanics/fan/fan.gd
-res://Pause.gd
-res://pause.tscn
->>>>>>> end
+res://levels/level1_tileset.tres
+res://level 2/node_2d.tscn
