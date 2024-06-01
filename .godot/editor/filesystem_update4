@@ -1,6 +1,2 @@
 res://gui/mainmenu/main_menu.tscn
 res://gui/mainmenu/ui.tres
-res://mechanics/pressure_plate/pressure_plate.gd
-res://gui/build_menu/build_menu.tscn
-res://levels/level1_tileset.tres
-res://level 2/node_2d.tscn

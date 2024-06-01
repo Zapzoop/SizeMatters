@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://e7flqfan73eo"]
 
-[ext_resource type="Script" path="res://end.gd" id="1_jysy2"]
+[ext_resource type="Script" path="res://end/end.gd" id="1_jysy2"]
 [ext_resource type="FontFile" uid="uid://4b365ipfvm3p" path="res://font/monogram-extended.ttf" id="2_4kbgv"]
 [ext_resource type="Theme" uid="uid://vx7ps63mg72k" path="res://gui/mainmenu/ui.tres" id="3_0ox6h"]
 
