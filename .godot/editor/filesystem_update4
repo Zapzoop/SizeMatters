@@ -1,6 +1,5 @@
-res://level 2/node_2d.tscn
-res://levels/level1_tileset.tres
 res://gui/mainmenu/main_menu.tscn
+res://levels/level1_tileset.tres
 res://mechanics/conveyour/converyour.tscn
 res://levels/level_1.tscn
 res://mechanics/lever/lever.tscn
@@ -10,3 +9,6 @@ res://hammer/hammer.tscn
 res://mouse/mouse.tscn
 res://mechanics/pressure_plate/pressure_plate.tscn
 res://mechanics/crates/wooden/wooden_crate.tscn
+res://level 2/node_2d.tscn
+res://mechanics/fan/fan.gd
+res://gui/level_selector/level_selector.tscn

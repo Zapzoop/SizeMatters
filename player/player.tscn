@@ -55,7 +55,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ce5g2"]
 radius = 3.0
-height = 28.0
+height = 22.0
 
 [node name="Player" type="CharacterBody2D" groups=["mechanics"]]
 position = Vector2(0, 14)
@@ -70,8 +70,7 @@ animation = &"jump"
 frame_progress = 0.297882
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -14)
+position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_ce5g2")
 
 [node name="Marker2D" type="Marker2D" parent="."]
