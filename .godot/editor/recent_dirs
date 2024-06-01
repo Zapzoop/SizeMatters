@@ -1,5 +1,2 @@
-res://temp_art/button
-res://temp_art
-res://sprites
-res://
-res://mechanics/vertical_door
+res://gui/mainmenu
+res://gui/mainmenu/resource
