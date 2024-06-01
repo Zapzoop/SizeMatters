@@ -1,12 +1,12 @@
 extends Control
 
-@onready var placeholder = $ScrollContainer/VBoxContainer/placeholder
+@onready var placeholder = $Panel/ScrollContainer/VBoxContainer/placeholder
 @onready var anim = $AnimationPlayer
 
 var opened = false
 
 var count = -1
-var inside = []
+var inside = [] 
 
 var coords = {
 	Vector2i(11,2):"Shaded Box",
@@ -55,8 +55,8 @@ func add_tile(received_coords):
 	texture_rec.texture = texture_to_load
 	texture_rec.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
 	texture_rec.gui_input.connect(_on_gui_input.bind(tile_name))
-	$ScrollContainer/VBoxContainer.add_child(texture_rec)
-	$ScrollContainer/VBoxContainer.move_child(placeholder,-1)
+	$Panel/ScrollContainer/VBoxContainer.add_child(texture_rec)
+	$Panel/ScrollContainer/VBoxContainer.move_child(placeholder,-1)
 
 func add_mechanic(mechanic_name):
 	var texture_to_load = load(texture_path[mechanic_name])
@@ -66,8 +66,8 @@ func add_mechanic(mechanic_name):
 	texture_rec.texture = texture_to_load
 	texture_rec.expand_mode = TextureRect.EXPAND_FIT_HEIGHT_PROPORTIONAL
 	texture_rec.gui_input.connect(_on_gui_input_mech.bind(mechanic_name))
-	$ScrollContainer/VBoxContainer.add_child(texture_rec)
-	$ScrollContainer/VBoxContainer.move_child(placeholder,-1)
+	$Panel/ScrollContainer/VBoxContainer.add_child(texture_rec)
+	$Panel/ScrollContainer/VBoxContainer.move_child(placeholder,-1)
 	
 func _on_gui_input_mech(event:InputEvent,mech_name):
 	if event is InputEventMouseButton:
@@ -86,7 +86,7 @@ func _on_gui_input(event:InputEvent,tile_name):
 
 func remove_child_(tile_name):
 	var index = index_finder(tile_name)
-	var child = $ScrollContainer/VBoxContainer.get_child(index)
+	var child = $Panel/ScrollContainer/VBoxContainer.get_child(index)
 	child.queue_free()
 	count -= 1
 	inside.remove_at(index)
@@ -99,7 +99,8 @@ func index_finder(tile_name):
 	
 func _input(event):
 	if Input.is_action_pressed("escape"):
-		_on_cancel_pressed()
+		if opened:
+			_on_cancel_pressed()
 
 func _on_cancel_pressed():
 	Global.cancel_build()
