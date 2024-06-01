@@ -1,18 +1,33 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn1bxi51sflmh"]
+[gd_scene load_steps=13 format=3 uid="uid://cn1bxi51sflmh"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_qw5uf"]
-[ext_resource type="Texture2D" uid="uid://dd7haiydj63ao" path="res://sprites/worker_idle.png" id="2_t15ds"]
-[ext_resource type="Texture2D" uid="uid://26cprpe4em2b" path="res://sprites/worker_jump.png" id="3_7jtsa"]
-[ext_resource type="Texture2D" uid="uid://cryrvrs5mn84o" path="res://sprites/worker_walk_1.png" id="3_e48mp"]
-[ext_resource type="Texture2D" uid="uid://cdc55n0iuxo1u" path="res://sprites/worker_walk_2.png" id="4_7dvks"]
-[ext_resource type="Texture2D" uid="uid://be4w8shv78ft3" path="res://sprites/hand.png" id="6_i0v4e"]
+[ext_resource type="Texture2D" uid="uid://daxa7qkjmfopv" path="res://temp_art/player.png" id="2_kvoi1"]
+[ext_resource type="Texture2D" uid="uid://bg0dl3wcrhpxi" path="res://temp_art/jump.png" id="3_wt1xh"]
+[ext_resource type="Texture2D" uid="uid://d018xkjy1ffiq" path="res://temp_art/Sprite-0002-Sheet.png" id="4_saixu"]
+[ext_resource type="Texture2D" uid="uid://d8xoef6k337g" path="res://temp_art/hand.png" id="5_yhtof"]
 [ext_resource type="PackedScene" uid="uid://4vfk37ghtjty" path="res://hammer/hammer.tscn" id="7_2s3sa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cceqt"]
+atlas = ExtResource("2_kvoi1")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50g1p"]
+atlas = ExtResource("3_wt1xh")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t44l2"]
+atlas = ExtResource("4_saixu")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp5fm"]
+atlas = ExtResource("4_saixu")
+region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mpy3w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_t15ds")
+"texture": SubResource("AtlasTexture_cceqt")
 }],
 "loop": true,
 "name": &"idle",
@@ -20,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_7jtsa")
+"texture": SubResource("AtlasTexture_50g1p")
 }],
 "loop": true,
 "name": &"jump",
@@ -28,10 +43,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_e48mp")
+"texture": SubResource("AtlasTexture_t44l2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_7dvks")
+"texture": SubResource("AtlasTexture_jp5fm")
 }],
 "loop": true,
 "name": &"run",
@@ -49,11 +64,13 @@ collision_mask = 17
 script = ExtResource("1_qw5uf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_mpy3w")
-animation = &"idle"
+animation = &"jump"
+frame_progress = 0.297882
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_ce5g2")
 
@@ -62,23 +79,22 @@ position = Vector2(0, -14)
 
 [node name="Hand" type="Sprite2D" parent="Marker2D"]
 position = Vector2(9, 1)
-rotation = -2.35982
-texture = ExtResource("6_i0v4e")
+texture = ExtResource("5_yhtof")
 
 [node name="Marker2D" type="Marker2D" parent="Marker2D/Hand"]
-rotation = -0.784356
+rotation = 3.14159
 
 [node name="hammer" parent="Marker2D/Hand/Marker2D" instance=ExtResource("7_2s3sa")]
 rotation = -3.14159
 offset = Vector2(0, -5)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -2)
 target_position = Vector2(0, 3.2)
 collision_mask = 17
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -12)
 target_position = Vector2(0, 3.2)
 
 [node name="Camera2D" type="Camera2D" parent="."]

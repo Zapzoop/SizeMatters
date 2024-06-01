@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://4vfk37ghtjty"]
 
-[ext_resource type="Texture2D" uid="uid://lgy7ya47602" path="res://sprites/small_hammer.png" id="1_8ipx0"]
+[ext_resource type="Texture2D" uid="uid://om7ubc3sustc" path="res://temp_art/hammer.png" id="1_sa2fo"]
 [ext_resource type="Script" path="res://hammer/hammer.gd" id="2_8iucv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlfol"]
 size = Vector2(34, 19)
 
 [node name="hammer" type="Sprite2D"]
-texture = ExtResource("1_8ipx0")
+texture = ExtResource("1_sa2fo")
 offset = Vector2(0, -26)
 script = ExtResource("2_8iucv")
 

@@ -76,7 +76,7 @@ func _physics_process(delta):
 		
 	var ray_collision = ray_cast.get_collision_point()
 	var ray_collision_2 = ray_cast2.get_collision_point()
-	if ray_collision and ray_collision.y - global_position.y == -6 and int(ray_collision.x)-int(ray_collision_2.x) != 0:
+	if ray_collision and ray_collision.y - global_position.y == -2 and int(ray_collision.x)-int(ray_collision_2.x) != 0:
 		velocity.y = -120
 		#move_and_slide()
 	#print(velocity)

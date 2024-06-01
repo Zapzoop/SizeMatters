@@ -62,12 +62,14 @@ func _input(event):
 
 func _physics_process(delta):
 	if power:
+		$Sprite2D.play("start")
 		for i in in_range:
 			if direction == "left":
 				i.apply_force(Vector2(-1100,0))
 			else:
 				i.apply_force(Vector2(1100,0))
-
+	elif !power:
+		$Sprite2D.play("default")
 
 func _on_range_left_body_entered(body):
 	if body.is_in_group("light"):
@@ -85,8 +87,6 @@ func _on_range_left_body_exited(body):
 		body.linear_velocity = Vector2.ZERO
 		#body.constant_force = Vector2(0, 0)
 		in_range.erase(body)
-
-
 
 func _on_range_right_body_exited(body):
 	if body.is_in_group("light"):
