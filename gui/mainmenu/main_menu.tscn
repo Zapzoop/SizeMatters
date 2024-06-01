@@ -44,6 +44,7 @@ theme = ExtResource("2_ce837")
 text = "Start"
 
 [node name="options" type="Button" parent="CanvasLayer/MainMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_ce837")
 text = "Options"
